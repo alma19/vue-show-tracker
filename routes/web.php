@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('app');
 });
 
+Route::get('/styleguide', function () {
+    return view('styleguide');
+});
+
 //api routes
 
 Route::get('/shows', 'ShowController@index');
