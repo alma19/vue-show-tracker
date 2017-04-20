@@ -1,26 +1,31 @@
 <template>
   <div class="container">
-    <h4>Test</h4>
-
-
+      <Styleguide></Styleguide>
   </div>
 </template>
 
+
 <script>
 import axios from 'axios';
+import Styleguide from './Styleguide';
+
 export default {
   components: {
+    Styleguide
   },
+
   data () {
     return {
+      cat: 'meow'
     }
   },
+
   mounted () {
   },
+
   methods: {
   }
 }
 </script>
-
 <style>
 </style>

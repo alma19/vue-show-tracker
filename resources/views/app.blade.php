@@ -7,6 +7,7 @@
 
         <title>Show Tracker</title>
 
+        <script src="https://use.fontawesome.com/3ddd43fed9.js"></script>
 
     </head>
     <body>
@@ -23,6 +24,7 @@
 
 
          <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+
         <script src="{{ mix('js/app.js') }}"></script>
     </body>
 </html>
