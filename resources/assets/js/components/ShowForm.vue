@@ -6,6 +6,15 @@
   <input type="text" v-model="channel" />
   <label>Genre</label>
   <input type="text" v-model="genre"  />
+  <label>Rating</label>
+  <select v-model="rating">
+    <option value="" selected></option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
   <label>Status</label>
   <select v-model="status">
     <option value="" selected>Select Status</option>
@@ -17,12 +26,7 @@
   <textarea class="form-control" name="notes" id="notes" placeholder="Notes" v-model="notes"></textarea>
   <label>Favorite</label>
   <input type="checkbox" v-model="favorite" />
-  <button class="btn btn-primary" @click="create">Add Show</button>
-
-
-
-
-
+  <button class="btn btn-primary" @click="create" :disabled="loading">Add Show</button>
   </div>
 </template>
 
@@ -45,7 +49,8 @@ export default {
       status: '',
       notes: '',
       rating: '',
-      favorite: false
+      favorite: false,
+      loading: false
     }
   },
 
@@ -91,7 +96,6 @@ export default {
       this.rating = '';
       this.favorite = false;
     }
-
   }
 };
 
