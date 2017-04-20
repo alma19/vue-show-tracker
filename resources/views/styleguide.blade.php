@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Styleguide</title>
 
-    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/main.css" />
 
     <!-- bootstrap -->
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
