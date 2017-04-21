@@ -43327,19 +43327,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 83 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)();
-exports.push([module.i, "\n.ShowFooter[data-v-7b4ff8ef] {\r\n  background-color: #7e6e81;\r\n  margin-top: 5%;\r\n  text-align: center;\r\n  padding: 15px;\r\n  color: black;\n}\na[data-v-7b4ff8ef] {\r\n  color: black;\r\n  text-decoration: none;\n}\na[data-v-7b4ff8ef]:hover {\r\n  color: white;\r\n  text-decoration: none;\n}\r\n", ""]);
-
-/***/ }),
+/* 83 */,
 /* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(86)
+__webpack_require__(88)
 
 var Component = __webpack_require__(2)(
   /* script */
@@ -43414,23 +43408,31 @@ if (false) {
 }
 
 /***/ }),
-/* 86 */
+/* 86 */,
+/* 87 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)();
+exports.push([module.i, "\n.ShowFooter[data-v-7b4ff8ef] {\n  background-color: #7e6e81;\n  margin-top: 5%;\n  text-align: center;\n  padding: 15px;\n  color: black;\n}\na[data-v-7b4ff8ef] {\n  color: black;\n  text-decoration: none;\n}\na[data-v-7b4ff8ef]:hover {\n  color: white;\n  text-decoration: none;\n}\n", ""]);
+
+/***/ }),
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(83);
+var content = __webpack_require__(87);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(3)("39fe3194", content, false);
+var update = __webpack_require__(3)("ddf545f2", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7b4ff8ef&scoped=true!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShowFooter.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7b4ff8ef&scoped=true!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShowFooter.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7b4ff8ef&scoped=true!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShowFooter.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7b4ff8ef&scoped=true!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShowFooter.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });

@@ -72,7 +72,29 @@ textarea.form-control {
   background-color: $blue;
 }
 
-// h1-4 colors and font weights
+/*TYPOGRAPHY */
+
+h1 {
+  color: $purple;
+}
+
+h2 {
+  color: black;
+}
+
+h3 {
+  font-weight: 700;
+  color: $blue;
+}
+
+h4 {
+  color: $blue;
+  font-weight: bold;
+}
+
+h5 {
+  font-weight: bold;
+}
 
 .raleway {
   font-family: 'Raleway', sans-serif;
@@ -140,3 +162,68 @@ textarea.form-control {
   border-color: black;
   color: $gray;
 }
+
+
+.form-control {
+  border-color: $gray;
+}
+
+.form-control:focus {
+  border-color:  $purple;
+  box-shadow: 0 0 5px $purple;
+  outline: 0 none;
+}
+
+/*NAV STYLES */
+.navigation {
+  i {
+    font-size: 2em;
+    position: relative;
+    top: 11px;
+    float: left;
+  }
+
+  a {
+    pointer: cursor;
+  }
+
+  #home {
+    margin-left: 0%;
+  }
+
+  .navbar-default {
+    background-color: #7e6e81;
+    border-color: #7e6e81;
+  }
+
+  .navbar-default .navbar-nav > li > a {
+    color: black;
+  }
+
+  .navbar-default .navbar-brand {
+    color: black;
+  }
+
+  .navbar-default .navbar-toggle:hover .navbar-default .navbar-toggle:focus {
+    background-color: #7e6e81;
+  }
+}
+
+.ShowFooter {
+  background-color: #7e6e81;
+  margin-top: 5%;
+  text-align: center;
+  padding: 15px;
+  color: black;
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+/*FOOTER STYLES */

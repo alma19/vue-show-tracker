@@ -13,6 +13,32 @@
   </head>
   <body id="styleguide">
 
+    <div class="navigation">
+      <nav class="navbar navbar-default">
+         <div class="container-fluid">
+
+           <!-- Brand and toggle get grouped for better mobile display -->
+           <div class="navbar-header">
+             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+             </button>
+             <i class="fa fa-television" aria-hidden="true"></i>
+             <a class="navbar-brand" href="" id="home">TV Show Tracker</a>
+           </div>
+
+           <!-- Collect the nav links, forms, and other content for toggling -->
+           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+             <ul class="nav navbar-nav navbar-right">
+               <li><a href="">All Shows</a></li>
+             </ul>
+           </div><!-- /.navbar-collapse -->
+         </div><!-- /.container-fluid -->
+       </nav>
+    </div>
+
     <div class="container">
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
@@ -61,11 +87,11 @@
           </div>
 
           <div class="col-lg-3 col-md-3">
-            <h3>Header Font</h3>
+            <h3>Header</h3>
           </div>
 
           <div class="col-lg-3 col-md-3">
-            <h3>Body Font</h3>
+            <h3>Body</h3>
           </div>
 
           <div class="col-lg-6 col-md-6"></div>
@@ -179,18 +205,18 @@
           <div class="col-lg-3 col-md-3 sizing">
           <h4> ul | Unordered List</h4>
           <ul>
-          <li>This is an unordered list item.</li>
-          <li> Another example of an unordered list item. </li>
-          <li> Yet another example of an unordered list item. </li>
+          <li>List item</li>
+          <li>List item </li>
+          <li> List item </li>
           </ul>
           </div>
 
           <div class="col-lg-3 col-md-3 sizing">
           <h4> ol | Ordered List</h4>
           <ol>
-          <li>li </li>
-          <li> li</li>
-          <li> li</li>
+          <li>List item </li>
+          <li> List item</li>
+          <li>List item </li>
           </ol>
           </div>
 
@@ -226,6 +252,13 @@
         </div> <!--row-->
       </div> <!--container-->
 
+      <div class="ShowFooter">
+        <a href="http://almawashington.com" target="_blank">Portfolio</a> |
+           <a href="https://github.com/alma19" target="_blank">Github</a> |
+           <a href="/">Credits</a> |
+           <a href="/styleguide">Styleguide</a> |
+           <a href="https://alma19.gitbooks.io/show-tracker-api/content/" target="_blank">Documentation</a>
+      </div>
 
       <link rel="stylesheet" href="{{ mix('css/app.css') }}">
       <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>

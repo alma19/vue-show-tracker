@@ -13,7 +13,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .ShowFooter {
   background-color: #7e6e81;
   margin-top: 5%;
