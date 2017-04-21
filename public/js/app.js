@@ -43028,7 +43028,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)();
-exports.push([module.i, "\n.Footer[data-v-1616bcdc] {\r\n  background-color: #7e6e81;\r\n  margin-top: 5%;\r\n  text-align: center;\r\n  padding: 15px;\r\n  color: black;\n}\na[data-v-1616bcdc] {\r\n  color: black;\r\n  text-decoration: none;\n}\r\n", ""]);
+exports.push([module.i, "\n.Footer[data-v-1616bcdc] {\r\n  background-color: #7e6e81;\r\n  margin-top: 5%;\r\n  text-align: center;\r\n  padding: 15px;\r\n  color: black;\n}\na[data-v-1616bcdc] {\r\n  color: black;\r\n  text-decoration: none;\n}\na[data-v-1616bcdc]:hover {\r\n  color: white;\r\n  text-decoration: none;\n}\r\n", ""]);
 
 /***/ }),
 /* 81 */
