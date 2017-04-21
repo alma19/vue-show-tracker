@@ -1,43 +1,63 @@
 <template>
   <div class="ShowForm">
 
-  <label>Name</label>
-  <input type="text" v-model="name" />
+  <h1>New Show</h1>
 
-  <label>Channel</label>
-  <input type="text" v-model="channel" />
+  <div class="form-group col-lg-4 col-md-4">
+    <label><h4>Name</h4></label>
+    <input class="form-control" type="text" v-model="name" />
+  </div>
 
-  <label>Genre</label>
-  <input type="text" v-model="genre"  />
+  <div class="form-group col-lg-4 col-md-4">
+    <label><h4>Channel</h4></label>
+    <input class="form-control" type="text" v-model="channel" />
+  </div>
 
-  <label>Rating</label>
-  <select v-model="rating">
-    <option value="" selected></option>
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-  </select>
+  <div class="form-group col-lg-4 col-md-4">
+    <label><h4>Genre</h4></label>
+    <input class="form-control" type="text" v-model="genre"  />
+  </div>
 
-  <label>Status</label>
-  <select v-model="status">
-    <option value="" selected>Select Status</option>
-    <option value="To Watch">To Watch</option>
-    <option value="Watching">Watching</option>
-    <option value="Watched">Watched</option>
-  </select>
+  <div class="form-group col-lg-4 col-md-4">
+    <label><h4>Status</h4></label>
+    <select  class="form-control" v-model="status">
+      <option value="" selected>Select Status</option>
+      <option value="To Watch">To Watch</option>
+      <option value="Watching">Watching</option>
+      <option value="Watched">Watched</option>
+    </select>
+  </div>
 
-  <label>Notes</label>
-  <textarea class="form-control" name="notes" id="notes" placeholder="Notes" v-model="notes"></textarea>
+    <div class="form-group col-lg-4 col-md-4">
+      <label><h4>Show Cover URL</h4></label>
+      <input class="form-control" type="text" v-model="picture"/>
+    </div>
+
+    <div class="form-group col-lg-4 col-md-4">
+      <label><h4>Rating</h4></label>
+      <select class="form-control" v-model="rating">
+        <option value="" selected></option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+
+  <div class="form-group col-lg-12">
+    <label><h4>Notes</h4></label>
+    <textarea class="form-control" name="notes" id="notes" placeholder="Notes" v-model="notes"></textarea>
+  </div>
+
 
   <label>Favorite</label>
-  <input type="checkbox" v-model="favorite" />
+  <input class="form-control" type="checkbox" v-model="favorite" />
 
-  <label>Artwork</label>
-  <input type="text" v-model="picture"/>
 
-  <button class="btn btn-primary" @click="create" :disabled="loading">Add Show</button>
+
+  <button class="btn btn-default" @click="create" :disabled="loading">Add Show</button>
+  <button class="btn btn-default" @click="cancelCreate">Cancel</button>
   </div>
 </template>
 
@@ -61,6 +81,7 @@ export default {
       notes: '',
       rating: '',
       picture: '',
+      creating: true,
       favorite: false,
       loading: false
     }
@@ -74,6 +95,7 @@ export default {
         return false;
       }
       this.loading = true;
+      this.creating = true;
       this.sendRequest();
     },
     sendRequest () {
@@ -107,8 +129,21 @@ export default {
       this.status = '';
       this.notes = '';
       this.rating = '';
-      this.picture = ''; 
+      this.picture = '';
       this.favorite = false;
+    },
+    cancelCreate (){
+      console.log('cancelCreate');
+      this.name = '';
+      this.channel = '';
+      this.genre = '';
+      this.status = '';
+      this.notes = '';
+      this.rating = '';
+      this.picture = '';
+      this.favorite = false;
+      this.creating = false;
+      this.$emit('newShow');
     }
   }
 };

@@ -1,5 +1,8 @@
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Hind:300,400,700');
+
+
 
 // Variables
 @import "variables";
@@ -7,11 +10,38 @@
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+// style guide variables
+$purple: #7e6e81;
+$brown: #bca68b;
+$blue: #3f4664;
+$gray: #7e7e85;
+
+
 body {
-  background-color: #bca68b; 
+  background-color: #bca68b;
+  color: black;
 }
 
+p {
+  font-family: 'Hind', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Raleway', sans-serif !important;
+}
+
+
+textarea.form-control {
+  resize: none;
+  height: 150px;
+}
+
+
 /*STYLE GUIDE */
+
+#styleguide {
+  background-color: white;
+}
 .colors {
   margin-bottom: 10px;
 }
@@ -24,4 +54,89 @@ body {
   height: 75px;
   border: 1px solid black;
   margin-bottom: 5px;
+}
+
+#box1 {
+  background-color: $brown;
+}
+
+#box2 {
+  background-color: $gray;
+}
+
+#box3 {
+  background-color: $purple;
+}
+
+#box4 {
+  background-color: $blue;
+}
+
+// h1-4 colors and font weights
+
+.raleway {
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+}
+
+.hind {
+  font-family: 'Hind', sans-serif;
+  font-size: 20px;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.headings {
+  margin-bottom: 10px;
+}
+
+/*UI ELEMENTS */
+.input {
+  margin-top: 10px;
+}
+
+.btn-sm {
+  background-color: $blue;
+  border-color: $blue;
+  color: #fff;
+}
+
+.btn-sm:hover, .btn-sm:active {
+  background-color: $gray;
+  border-color: $gray;
+  color: white;
+}
+
+.btn-md {
+  background-color: $purple;
+  border-color: $purple;
+  color: #fff;
+}
+
+.btn-md:hover, .btn-md:active {
+  background-color: $blue;
+  border-color: $blue;
+  color: black;
+}
+
+.btn-lg, .btn-xs {
+  background-color: black;
+  border-color: black;
+  color: $gray;
+}
+
+.btn-lg:hover, .btn-xs:hover, .btn-lg:active, .btn-xs:active, .btn-xs:visited {
+  background-color: white;
+  border-color: black;
+  color: $gray;
 }

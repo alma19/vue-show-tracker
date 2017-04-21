@@ -3,7 +3,7 @@
 
 
       <div class="live" v-show="!editing">
-        <div class="container col-lg-4">
+        <div class="container col-lg-4 col-md-4">
           <img :src="show.picture" class="pic"/>
           <div class="show-text">
             {{ show.name }}
@@ -27,43 +27,61 @@
 
 
       <div class="editing" v-show="editing">
+
+          <div class="form-group col-lg-4 col-md-4">
+            <label><h4>Name</h4></label>
+            <input class="form-control" type="text" v-model="name" />
+          </div>
+
+          <div class="form-group col-lg-4 col-md-4">
+            <label><h4>Channel</h4></label>
+            <input class="form-control" type="text" v-model="channel" />
+          </div>
+
+          <div class="form-group col-lg-4 col-md-4">
+            <label><h4>Genre</h4></label>
+            <input class="form-control" type="text" v-model="genre"  />
+          </div>
+
+          <div class="form-group col-lg-4 col-md-4">
+            <label><h4>Status</h4></label>
+            <select  class="form-control" v-model="status">
+              <option value="" selected>Select Status</option>
+              <option value="To Watch">To Watch</option>
+              <option value="Watching">Watching</option>
+              <option value="Watched">Watched</option>
+            </select>
+          </div>
+
+            <div class="form-group col-lg-4 col-md-4">
+              <label><h4>Show Cover URL</h4></label>
+              <input class="form-control" type="text" v-model="picture"/>
+            </div>
+
+            <div class="form-group col-lg-4 col-md-4">
+              <label><h4>Rating</h4></label>
+              <select class="form-control" v-model="rating">
+                <option value="" selected></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+
+          <div class="form-group col-lg-12">
+            <label><h4>Notes</h4></label>
+            <textarea class="form-control" name="notes" id="notes" placeholder="Notes" v-model="notes"></textarea>
+          </div>
+
+
+          <label>Favorite</label>
+          <input class="form-control" type="checkbox" v-model="favorite" />
+
+
         <p>
-          <label>Name</label>
-          <input type="text" v-model="name" />
-
-          <label>Channel</label>
-          <input type="text" v-model="channel" />
-
-          <label>Genre</label>
-          <input type="text" v-model="genre" />
-
-          <label>Rating</label>
-          <select v-model="rating">
-            <option value="" selected></option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-
-          <label>Status</label>
-          <select v-model="status">
-            <option value="" selected>Select Status</option>
-            <option value="To Watch">To Watch</option>
-            <option value="Watching">Watching</option>
-            <option value="Watched">Watched</option>
-          </select>
-
-          <label>Notes</label>
-          <textarea class="form-control" name="notes" id="notes" placeholder="Notes" v-model="notes"></textarea>
-
-          <label>Artwork</label>
-          <input type="text" v-model="picture"/>
-        </p>
-
-        <p>
-          <button class="btn btn-success" @click="save">Save</button>
+          <button class="btn btn-default" @click="save">Save</button>
           <button class="btn btn-default" @click="cancel">Cancel</button>
         </p>
       </div>
@@ -165,6 +183,7 @@ export default {
 </script>
 
 <style>
+
 img {
   width: 300px;
   height: 450px;

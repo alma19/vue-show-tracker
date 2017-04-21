@@ -1,10 +1,10 @@
 <template>
-  <div class="Footer">
+  <div class="ShowFooter">
     <a href="http://almawashington.com" target="_blank">Portfolio</a> |
        <a href="https://github.com/alma19" target="_blank">Github</a> |
        <a href="/">Credits</a> |
        <a href="/styleguide">Styleguide</a> |
-       <a href="/">Documentation</a>
+       <a href="https://alma19.gitbooks.io/show-tracker-api/content/" target="_blank">Documentation</a>
   </div>
 </template>
 
@@ -14,7 +14,7 @@ export default {
 </script>
 
 <style scoped>
-.Footer {
+.ShowFooter {
   background-color: #7e6e81;
   margin-top: 5%;
   text-align: center;
@@ -29,6 +29,6 @@ a {
 
 a:hover {
   color: white;
-  text-decoration: none; 
+  text-decoration: none;
 }
 </style>

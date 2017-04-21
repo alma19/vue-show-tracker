@@ -19,7 +19,7 @@
          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
            <ul class="nav navbar-nav navbar-right">
              <li><a href="">All Shows</a></li>
-             <li><a href="">New Show</a></li>
+             <li><a @click="createForm()" :show="show">New Show</a></li>
            </ul>
          </div><!-- /.navbar-collapse -->
        </div><!-- /.container-fluid -->
@@ -27,8 +27,42 @@
   </div>
 </template>
 
+
+
 <script>
+
+import axios from 'axios';
+import ShowForm from './ShowForm';
+
 export default {
+  components: {
+    ShowForm
+  },
+
+  props: [
+    'show'
+  ],
+
+  data (){
+    return {
+      // name: this.show.name,
+      // channel: this.show.channel,
+      // genre: this.show.genre,
+      // status: this.show.status,
+      // notes: this.show.notes,
+      // rating: this.show.rating,
+      // picture: this.show.picture,
+      // favorite: this.show.favorite,
+      showForm: false
+    }
+  },
+
+  methods: {
+    createForm() {
+      console.log('createForm');
+      this.showForm = true;
+    }
+  }
 }
 </script>
 
@@ -41,7 +75,28 @@ export default {
     float: left;
   }
 
+  a {
+    pointer: cursor;
+  }
+
   #home {
     margin-left: 0%;
+  }
+
+  .navbar-default {
+    background-color: #7e6e81;
+    border-color: #7e6e81;
+  }
+
+  .navbar-default .navbar-nav > li > a {
+    color: black;
+  }
+
+  .navbar-default .navbar-brand {
+    color: black;
+  }
+
+  .navbar-default .navbar-toggle:hover, .navbar-default. navbar-toggle:focus {
+    background-color: #7e6e81;
   }
 </style>

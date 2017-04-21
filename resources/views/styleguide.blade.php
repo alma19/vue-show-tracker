@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <title>Styleguide</title>
 
-    <link rel="stylesheet" href="css/main.css" />
 
     <!-- bootstrap -->
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -12,7 +11,7 @@
     <script src="https://use.fontawesome.com/3ddd43fed9.js"></script>
 
   </head>
-  <body>
+  <body id="styleguide">
 
     <div class="container">
       <div class="row">
@@ -23,55 +22,32 @@
               <h2>Colors</h2>
             </div>
 
-            <div class="col-lg-2 col-md-2 col-xs-4 sizing">
+            <div class="col-lg-3 col-md-3 col-xs-6 sizing">
             <div class="color-box" id="box1"></div>
-            <p class="color-text">#D2B8F3 </p>
+            <p class="color-text">#BCA68B </p>
             </div>
 
-            <div class="col-lg-2 col-md-2 col-xs-4 sizing">
+            <div class="col-lg-3 col-md-3 col-xs-6 sizing">
             <div class="color-box" id="box2"></div>
-            <p class="color-text"> #AA70F5 </p>
+            <p class="color-text"> #7E7E85 </p>
             </div>
 
-            <div class="col-lg-2 col-md-2 col-xs-4 sizing">
+            <div class="col-lg-6 col-md-6"></div>
+
+            <div class="col-lg-3 col-md-3 col-xs-6 sizing">
             <div class="color-box" id="box3"></div>
-            <p class="color-text">  #503573</p>
+            <p class="color-text">  #7E6E81</p>
             </div>
 
-            <div class="col-lg-6 col-md-6"></div>
 
-            <div class="col-lg-2 col-md-2 col-xs-4 sizing">
+            <div class="col-lg-3 col-md-3 col-xs-6 sizing">
             <div class="color-box" id="box4"></div>
-            <p class="color-text">#BC6CC6</p>
-            </div>
-
-            <div class="col-lg-2 col-md-2 col-xs-4 sizing">
-            <div class="color-box" id="box5"></div>
-            <p class="color-text">#6F1E7A</p>
+            <p class="color-text">#3F4664</p>
             </div>
 
 
-            <div class="col-lg-2 col-md-2 col-xs-4 sizing">
-            <div class="color-box" id="box6"></div>
-            <p class="color-text">#411147</p>
-            </div>
 
-            <div class="col-lg-6 col-md-6"></div>
 
-            <div class="col-lg-2 col-md-2 col-xs-4 sizing">
-            <div class="color-box" id="box7"></div>
-            <p class="color-text">#DADADA</p>
-            </div>
-
-            <div class="col-lg-2 col-md-2 col-xs-4 sizing">
-            <div class="color-box" id="box8"></div>
-            <p class="color-text">#9A9A9A</p>
-            </div>
-
-            <div class="col-lg-2 col-md-2 col-xs-4 sizing">
-            <div class="color-box" id="box9"></div>
-            <p class="color-text">#0E0D0A</p>
-            </div>
 
           </div> <!--colors -->
 
@@ -96,15 +72,15 @@
 
           <div class="col-lg-3 col-md-3 sizing">
 
-          <p class="ubuntu light">Ubuntu Light</p>
-          <p class="ubuntu regular">Ubuntu Regular</p>
-          <p class="ubuntu bold">Ubuntu Bold</p>
+          <p class="raleway light">Raleway Light</p>
+          <p class="raleway regular">Raleway Regular</p>
+          <p class="raleway bold">Raleway Bold</p>
           </div>
 
           <div class="col-lg-3 col-md-3 sizing">
-          <p class="roboto light">Roboto Light</p>
-          <p class="roboto regular">Roboto Regular</p>
-          <p class="roboto bold">Roboto Bold</p>
+          <p class="hind light">Hind Light</p>
+          <p class="hind regular">Hind Regular</p>
+          <p class="hind bold">Hind Bold</p>
           </div>
 
 
@@ -129,7 +105,7 @@
 
           <div class="col-lg-6 col-md-6"></div>
           <div class="col-lg-6 col-md-6">
-          <p>
+          <p class="regular">
           <span class="bold">Paragraph text.</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac tristique odio. Suspendisse eget turpis risus. Suspendisse aliquet sollicitudin erat, at vulputate mi malesuada eu.
           </p>
 
@@ -250,6 +226,8 @@
         </div> <!--row-->
       </div> <!--container-->
 
+
+      <link rel="stylesheet" href="{{ mix('css/app.css') }}">
       <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
