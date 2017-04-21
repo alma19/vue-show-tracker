@@ -1,21 +1,31 @@
 <template>
-  <div class="Show panel panel-default">
-    <div class="panel-heading">
+  <div class="Show">
 
-      <a class="tool" href="#" @click.prevent="remove">
-        <i class="glyphicon glyphicon-remove pull-right"></i>
-      </a>
 
-      <a class="tool" href="#" @click.prevent="editing = true" v-show="!editing">
-        <i class="glyphicon glyphicon-pencil pull-right"></i>
-      </a>
-    </div> <!--panel heading -->
-
-    <div class="panel-body">
       <div class="live" v-show="!editing">
-        <p>{{ show.name }}</p>
-        <img :src="show.picture" />
+        <div class="container col-lg-4">
+          <img :src="show.picture" class="pic"/>
+          <div class="show-text">
+            {{ show.name }}
+            <div class="show-icons">
+
+             <a class="tool" href="#" @click.prevent="editing = true" v-show="!editing">
+               <i class="fa fa-pencil" aria-hidden="true"></i>
+             </a>
+
+             <a class="tool" href="#" @click.prevent="remove">
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </a>
+            </div>
+          </div>
+
+
+
+        </div>
+
       </div>
+
+
       <div class="editing" v-show="editing">
         <p>
           <label>Name</label>
@@ -57,7 +67,7 @@
           <button class="btn btn-default" @click="cancel">Cancel</button>
         </p>
       </div>
-    </div> <!--panel body-->
+
 
   </div>
 </template>
@@ -154,7 +164,29 @@ export default {
 }
 </script>
 
-<style scoped>
-.Show {
+<style>
+img {
+  width: 300px;
+  height: 450px;
+  margin-top: 7%;
 }
+
+.show-text {
+  color: #fff;
+  background-color: #7e6e81;
+  width: 300px;
+  text-align: center;
+  margin-top: 3%;
+  padding: 10px;
+}
+
+.show-icons {
+  font-size: 1.5em;
+}
+
+i {
+  color: black;
+}
+
+
 </style>

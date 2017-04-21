@@ -1,7 +1,8 @@
 <template>
-  <div class="container">
-    <h4>App.vue</h4>
-    <ShowForm @created="fetch"></ShowForm>
+  <div>
+    <Navigation></Navigation>
+    <div class="container">
+      <ShowForm @created="fetch"></ShowForm>
 
     <div class="ShowList" v-show="shows.length >0">
       <Show v-for="(show, index) in shows" :key="index" :show="show" @updated="update" @deleted="remove(index)"></Show>
@@ -13,6 +14,9 @@
       <MainLoader v-if="loading"></MainLoader>
     </transition>
 
+    </div>
+
+    <Footer></Footer>
   </div>
 </template>
 
@@ -22,13 +26,17 @@ import axios from 'axios';
 import Show from './Show';
 import ShowForm from './ShowForm';
 import MainLoader from './MainLoader';
+import Navigation from './Navigation';
+import Footer from './Footer';
 
 
 export default {
   components: {
     Show,
     ShowForm,
-    MainLoader
+    MainLoader,
+    Navigation,
+    Footer
   },
 
   // make GET request for data
