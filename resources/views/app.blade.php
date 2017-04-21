@@ -15,7 +15,7 @@
     </head>
     <body>
 
-      <h1>App test</h1>
+      
         <div id="app"></div>
         <script>
             window.Laravel = {!! json_encode([

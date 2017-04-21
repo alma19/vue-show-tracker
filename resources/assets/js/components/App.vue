@@ -81,8 +81,9 @@ export default {
   } // end methods
 } // end export defaults
 </script>
-<style>
-.test {
-
+<style lang="scss">
+body {
+  background-color: #bca68b;
 }
+
 </style>

@@ -1,11 +1,15 @@
 <template>
   <div class="ShowForm">
+
   <label>Name</label>
   <input type="text" v-model="name" />
+
   <label>Channel</label>
   <input type="text" v-model="channel" />
+
   <label>Genre</label>
   <input type="text" v-model="genre"  />
+
   <label>Rating</label>
   <select v-model="rating">
     <option value="" selected></option>
@@ -15,6 +19,7 @@
     <option value="4">4</option>
     <option value="5">5</option>
   </select>
+
   <label>Status</label>
   <select v-model="status">
     <option value="" selected>Select Status</option>
@@ -22,10 +27,16 @@
     <option value="Watching">Watching</option>
     <option value="Watched">Watched</option>
   </select>
+
   <label>Notes</label>
   <textarea class="form-control" name="notes" id="notes" placeholder="Notes" v-model="notes"></textarea>
+
   <label>Favorite</label>
   <input type="checkbox" v-model="favorite" />
+
+  <label>Artwork</label>
+  <input type="text" v-model="picture"/>
+
   <button class="btn btn-primary" @click="create" :disabled="loading">Add Show</button>
   </div>
 </template>
@@ -49,6 +60,7 @@ export default {
       status: '',
       notes: '',
       rating: '',
+      picture: '',
       favorite: false,
       loading: false
     }
@@ -72,6 +84,7 @@ export default {
         status: this.status,
         notes: this.notes,
         rating: this.rating,
+        picture: this.picture,
         favorite: this.favorite
       })
       .then((response) => {
@@ -94,6 +107,7 @@ export default {
       this.status = '';
       this.notes = '';
       this.rating = '';
+      this.picture = ''; 
       this.favorite = false;
     }
   }
