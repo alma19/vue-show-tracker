@@ -12485,6 +12485,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -12705,6 +12711,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+//
+//
+//
 //
 //
 //
@@ -15522,7 +15531,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)();
-exports.push([module.i, "\nnav {\n  font-family: 'Raleway', sans-serif;\n}\nbody {\n  background-color: #bca68b;\n}\n.navigation i {\n  font-size: 2em;\n  position: relative;\n  top: 11px;\n  float: left;\n}\n.navigation a {\n  pointer: cursor;\n}\n.navigation #home {\n  margin-left: 0%;\n}\n.navigation .navbar-default {\n  background-color: #7e6e81;\n  border-color: #7e6e81;\n}\n.navigation .navbar-default .navbar-nav > li > a {\n  color: black;\n}\n.navigation .navbar-default .navbar-brand {\n  color: black;\n}\n.navigation .navbar-default .navbar-toggle:hover .navbar-default .navbar-toggle:focus {\n  background-color: #7e6e81;\n}\n", ""]);
+exports.push([module.i, "\nnav {\n  font-family: 'Raleway', sans-serif;\n}\nbody {\n  background-color: #bca68b;\n}\n.navigation i {\n  font-size: 2em;\n  position: relative;\n  top: 11px;\n  float: left;\n}\n.navigation a {\n  pointer: cursor;\n}\n.navigation #home {\n  margin-left: 0%;\n}\n.navigation .navbar-default {\n  background-color: #7e6e81;\n  border-color: #7e6e81;\n}\n.navigation .navbar-default .navbar-nav > li > a {\n  color: black;\n}\n.navigation .navbar-default .navbar-brand {\n  color: black;\n}\n.navigation .navbar-default .navbar-toggle:hover .navbar-default .navbar-toggle:focus {\n  background-color: #7e6e81;\n}\n.intro {\n  text-align: center;\n}\n", ""]);
 
 /***/ }),
 /* 49 */
@@ -32925,7 +32934,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _vm._v(" "), _c('div', {
     staticClass: "show-text"
-  }, [_vm._v("\n          " + _vm._s(_vm.show.name) + "\n          "), _c('div', {
+  }, [_c('h5', [_vm._v(_vm._s(_vm.show.name))]), _vm._v(" "), _c('div', {
     staticClass: "show-icons"
   }, [_c('a', {
     directives: [{
@@ -33438,7 +33447,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.notes = $event.target.value
       }
     }
-  })]), _vm._v(" "), _c('label', [_vm._v("Favorite")]), _vm._v(" "), _c('input', {
+  })]), _vm._v(" "), _vm._m(7), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -33498,6 +33507,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('label', [_c('h4', [_vm._v("Rating")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('label', [_c('h4', [_vm._v("Notes")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('label', [_c('h4', [_vm._v("Favrotie")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -33663,7 +33674,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("New Show")])])])])])])]), _vm._v(" "), _c('div', {
     staticClass: "container"
-  }, [(_vm.showForm) ? _c('div', [_c('ShowForm', {
+  }, [_vm._m(2), _vm._v(" "), (_vm.showForm) ? _c('div', [_c('ShowForm', {
     on: {
       "created": _vm.fetch
     }
@@ -33737,6 +33748,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "href": ""
     }
   }, [_vm._v("All Shows")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "intro"
+  }, [_c('p', [_vm._v("\n      Intro Here\n    ")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {

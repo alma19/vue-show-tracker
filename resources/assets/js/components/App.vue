@@ -29,6 +29,12 @@
 
     <div class="container">
 
+    <div class="intro">
+      <p>
+        Intro Here
+      </p>
+    </div>
+
 
       <div v-if="showForm">
         <ShowForm @created="fetch"></ShowForm>
@@ -169,6 +175,10 @@ body {
   .navbar-default .navbar-toggle:hover .navbar-default .navbar-toggle:focus {
     background-color: #7e6e81;
   }
+}
+
+.intro {
+  text-align: center; 
 }
 
 

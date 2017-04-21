@@ -51,7 +51,7 @@
   </div>
 
 
-  <label>Favorite</label>
+  <label><h4>Favrotie</h4></label>
   <input class="form-control" type="checkbox" v-model="favorite" />
 
 

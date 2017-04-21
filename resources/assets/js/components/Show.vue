@@ -3,25 +3,25 @@
 
 
       <div class="live" v-show="!editing">
-        <div class="container col-lg-4 col-md-4">
-          <img :src="show.picture" class="pic"/>
-          <div class="show-text">
-            {{ show.name }}
-            <div class="show-icons">
 
-             <a class="tool" href="#" @click.prevent="editing = true" v-show="!editing">
-               <i class="fa fa-pencil" aria-hidden="true"></i>
-             </a>
+          <div class="container col-lg-4 col-md-4">
+            <img :src="show.picture" class="pic"/>
+            <div class="show-text">
+              <h5>{{ show.name }}</h5>
+              <div class="show-icons">
 
-             <a class="tool" href="#" @click.prevent="remove">
-              <i class="fa fa-trash" aria-hidden="true"></i>
-            </a>
+               <a class="tool" href="#" @click.prevent="editing = true" v-show="!editing">
+                 <i class="fa fa-pencil" aria-hidden="true"></i>
+               </a>
+
+               <a class="tool" href="#" @click.prevent="remove">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              </a>
+              </div>
             </div>
-          </div>
-
-
 
         </div>
+
 
       </div>
 
@@ -84,6 +84,9 @@
           <button class="btn btn-default" @click="save">Save</button>
           <button class="btn btn-default" @click="cancel">Cancel</button>
         </p>
+
+
+
       </div>
 
 
