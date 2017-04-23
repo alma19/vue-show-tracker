@@ -12861,6 +12861,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -12985,6 +12993,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Loader___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Loader__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_star_rating__ = __webpack_require__(86);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_star_rating___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue_star_rating__);
+//
+//
+//
 //
 //
 //
@@ -15597,14 +15608,14 @@ exports.push([module.i, "\n.loader {\r\n  position: fixed;\r\n  z-index: 1000;\r
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)();
-exports.push([module.i, "\nimg {\r\n  width: 300px;\r\n  height: 450px;\r\n  margin-top: 7%;\n}\n.show-text {\r\n  color: #fff;\r\n  background-color: #7e6e81;\r\n  width: 300px;\r\n  text-align: center;\r\n  margin-top: 3%;\r\n  padding: 10px;\n}\n.show-icons {\r\n  font-size: 1.5em;\n}\ni {\r\n  color: black;\n}\r\n\r\n\r\n", ""]);
+exports.push([module.i, "\nimg {\r\n  width: 300px;\r\n  height: 450px;\r\n  margin-top: 7%;\n}\n.show-text {\r\n  color: #fff;\r\n  background-color: #7e6e81;\r\n  width: 300px;\r\n  text-align: center;\r\n  margin-top: 3%;\r\n  padding: 10px;\n}\n.show-icons {\r\n  font-size: 1.5em;\n}\ni {\r\n  color: black;\n}\n.show-name {\r\n  color: white;\n}\n.stars {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\r\n\r\n\r\n", ""]);
 
 /***/ }),
 /* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)();
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 /***/ }),
 /* 46 */
@@ -15632,7 +15643,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)();
-exports.push([module.i, "\nnav {\n  font-family: 'Raleway', sans-serif;\n}\nbody {\n  background-color: #bca68b;\n}\n.navigation i {\n  font-size: 2em;\n  position: relative;\n  top: 11px;\n  float: left;\n}\n.navigation a {\n  pointer: cursor;\n}\n.navigation #home {\n  margin-left: 0%;\n}\n.navigation .navbar-default {\n  background-color: #7e6e81;\n  border-color: #7e6e81;\n}\n.navigation .navbar-default .navbar-nav > li > a {\n  color: black;\n}\n.navigation .navbar-default .navbar-brand {\n  color: black;\n}\n.navigation .navbar-default .navbar-toggle:hover .navbar-default .navbar-toggle:focus {\n  background-color: #7e6e81;\n}\n.intro {\n  text-align: center;\n}\n", ""]);
+exports.push([module.i, "\nnav {\n  font-family: 'Raleway', sans-serif;\n}\nbody {\n  background-color: #bca68b;\n}\n.navigation a {\n  pointer: cursor;\n}\n.navigation #home {\n  margin-left: 0%;\n}\n.navigation .navbar-default {\n  background-color: #7e6e81;\n  border-color: #7e6e81;\n}\n.navigation .navbar-default .navbar-nav > li > a {\n  color: black;\n}\n.navigation .navbar-default .navbar-brand {\n  color: black;\n}\n.navigation .navbar-default .navbar-toggle:hover .navbar-default .navbar-toggle:focus {\n  background-color: #7e6e81;\n}\n.intro {\n  text-align: center;\n}\n", ""]);
 
 /***/ }),
 /* 50 */
@@ -33033,12 +33044,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _vm._v(" "), _c('div', {
     staticClass: "show-text"
-  }, [_c('h5', [_vm._v(_vm._s(_vm.show.name))]), _vm._v(" "), _c('p', [_c('star-rating', {
+  }, [_c('h4', {
+    staticClass: "show-name"
+  }, [_vm._v(_vm._s(_vm.show.name))]), _vm._v(" "), _c('div', {
+    staticClass: "stars"
+  }, [_c('star-rating', {
     attrs: {
+      "read-only": true,
       "rating": _vm.rating,
-      "show-rating": false
+      "show-rating": false,
+      "star-size": 30
     }
-  }, [_vm._v(_vm._s(_vm.show.rating))])], 1), _vm._v(" "), _c('div', {
+  }, [_vm._v(_vm._s(_vm.show.rating) + "\n              ")])], 1), _vm._v(" "), _c('div', {
     staticClass: "show-icons"
   }, [_c('a', {
     directives: [{
@@ -33088,7 +33105,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "editing"
   }, [_c('div', {
     staticClass: "col-lg-12"
-  }), _vm._v(" "), _c('div', {
+  }), _vm._v(" "), _c('h1', [_vm._v("View & Edit Show")]), _vm._v(" "), _c('div', {
     staticClass: "form-group col-lg-4 col-md-4"
   }, [_vm._m(0), _vm._v(" "), _c('input', {
     directives: [{
@@ -33156,7 +33173,29 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })]), _vm._v(" "), _c('div', {
     staticClass: "form-group col-lg-4 col-md-4"
-  }, [_vm._m(3), _vm._v(" "), _c('select', {
+  }, [_vm._m(3), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.picture),
+      expression: "picture"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.picture)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.picture = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "form-group col-lg-4 col-md-4"
+  }, [_vm._m(4), _vm._v(" "), _c('select', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -33194,29 +33233,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("Watched")])])]), _vm._v(" "), _c('div', {
     staticClass: "form-group col-lg-4 col-md-4"
-  }, [_vm._m(4), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.picture),
-      expression: "picture"
-    }],
-    staticClass: "form-control",
+  }, [_vm._m(5), _vm._v(" "), _c('star-rating', {
     attrs: {
-      "type": "text"
+      "star-size": 30
     },
-    domProps: {
-      "value": (_vm.picture)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.picture = $event.target.value
-      }
-    }
-  })]), _vm._v(" "), _c('div', {
-    staticClass: "form-group col-lg-4 col-md-4"
-  }, [_c('label', [_vm._v("Rating")]), _vm._v(" "), _c('star-rating', {
     model: {
       value: (_vm.rating),
       callback: function($$v) {
@@ -33226,7 +33246,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })], 1), _vm._v(" "), _c('div', {
     staticClass: "form-group col-lg-12"
-  }, [_vm._m(5), _vm._v(" "), _c('textarea', {
+  }, [_vm._m(6), _vm._v(" "), _c('textarea', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -33298,9 +33318,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('label', [_c('h4', [_vm._v("Genre")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('label', [_c('h4', [_vm._v("Show Cover URL")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('label', [_c('h4', [_vm._v("Status")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('label', [_c('h4', [_vm._v("Show Cover URL")])])
+  return _c('label', [_c('h4', [_vm._v("Rating")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('label', [_c('h4', [_vm._v("Notes")])])
 }]}
@@ -33387,7 +33409,29 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })]), _vm._v(" "), _c('div', {
     staticClass: "form-group col-lg-4 col-md-4"
-  }, [_vm._m(3), _vm._v(" "), _c('select', {
+  }, [_vm._m(3), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.picture),
+      expression: "picture"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.picture)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.picture = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "form-group col-lg-4 col-md-4"
+  }, [_vm._m(4), _vm._v(" "), _c('select', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -33425,29 +33469,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("Watched")])])]), _vm._v(" "), _c('div', {
     staticClass: "form-group col-lg-4 col-md-4"
-  }, [_vm._m(4), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.picture),
-      expression: "picture"
-    }],
-    staticClass: "form-control",
+  }, [_vm._m(5), _vm._v(" "), _c('star-rating', {
     attrs: {
-      "type": "text"
+      "star-size": 30
     },
-    domProps: {
-      "value": (_vm.picture)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.picture = $event.target.value
-      }
-    }
-  })]), _vm._v(" "), _c('div', {
-    staticClass: "form-group col-lg-4 col-md-4"
-  }, [_c('label', [_vm._v("Rating")]), _vm._v(" "), _c('star-rating', {
     on: {
       "rating-selected": _vm.setRating
     },
@@ -33460,7 +33485,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })], 1), _vm._v(" "), _c('div', {
     staticClass: "form-group col-lg-12"
-  }, [_vm._m(5), _vm._v(" "), _c('textarea', {
+  }, [_vm._m(6), _vm._v(" "), _c('textarea', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -33482,7 +33507,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.notes = $event.target.value
       }
     }
-  })]), _vm._v(" "), _vm._m(6), _vm._v(" "), _c('input', {
+  })]), _vm._v(" "), _vm._m(7), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -33535,9 +33560,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('label', [_c('h4', [_vm._v("Genre")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('label', [_c('h4', [_vm._v("Show Cover URL")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('label', [_c('h4', [_vm._v("Status")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('label', [_c('h4', [_vm._v("Show Cover URL")])])
+  return _c('label', [_c('h4', [_vm._v("Rating")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('label', [_c('h4', [_vm._v("Notes")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -33805,18 +33832,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "icon-bar"
   }), _vm._v(" "), _c('span', {
     staticClass: "icon-bar"
-  })]), _vm._v(" "), _c('i', {
-    staticClass: "fa fa-television",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }), _vm._v(" "), _c('a', {
+  })]), _vm._v(" "), _c('a', {
     staticClass: "navbar-brand",
     attrs: {
       "href": "",
       "id": "home"
     }
-  }, [_vm._v("TV Show Tracker")])])
+  }, [_vm._v(" TV Show Tracker")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('li', [_c('a', {
     attrs: {

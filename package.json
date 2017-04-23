@@ -1,4 +1,8 @@
 {
+  "name": "show-tracker",
+  "version": "1.0.0",
+  "description": "Vue.js and Laravel TV Show Tracker application",
+  "author": "Alma Washington <almawashington.com>",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",

@@ -18,6 +18,13 @@
     <input class="form-control" type="text" v-model="genre"  />
   </div>
 
+
+  <div class="form-group col-lg-4 col-md-4">
+    <label><h4>Show Cover URL</h4></label>
+    <input class="form-control" type="text" v-model="picture"/>
+  </div>
+
+  
   <div class="form-group col-lg-4 col-md-4">
     <label><h4>Status</h4></label>
     <select  class="form-control" v-model="status">
@@ -28,10 +35,6 @@
     </select>
   </div>
 
-    <div class="form-group col-lg-4 col-md-4">
-      <label><h4>Show Cover URL</h4></label>
-      <input class="form-control" type="text" v-model="picture"/>
-    </div>
 
     <!-- <div class="form-group col-lg-4 col-md-4">
       <label><h4>Rating</h4></label>
@@ -46,9 +49,9 @@
     </div> -->
 
     <div class="form-group col-lg-4 col-md-4">
-      <label>Rating</label>
+      <label><h4>Rating</h4></label>
         <star-rating
-          v-model="rating"
+          v-model="rating" v-bind:star-size="30"
           @rating-selected="setRating">
         </star-rating>
     </div>
@@ -100,7 +103,7 @@ export default {
   methods: {
     setRating: function(rating) {
       this.rating = rating;
-    }, 
+    },
     create (){
       console.log('ShowForm -> create');
       if(this.loading) {

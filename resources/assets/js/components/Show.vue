@@ -7,8 +7,11 @@
           <div class="container col-lg-4 col-md-4">
             <img :src="show.picture" class="pic"/>
             <div class="show-text">
-              <h5>{{ show.name }}</h5>
-              <p> <star-rating :rating="rating" v-bind:show-rating="false">{{ show.rating }}</star-rating></p>
+              <h4 class="show-name">{{ show.name }}</h4>
+              <div class="stars">
+                <star-rating :read-only="true" :rating="rating" v-bind:show-rating="false" v-bind:star-size="30">{{ show.rating }}
+                </star-rating>
+              </div>
               <div class="show-icons">
 
                <a class="tool" href="#" @click.prevent="editing = true" v-show="!editing">
@@ -29,7 +32,11 @@
 
       <div class="editing" v-show="editing">
 
+
+
         <div class="col-lg-12"></div>
+
+        <h1>View & Edit Show</h1>
 
           <div class="form-group col-lg-4 col-md-4">
             <label><h4>Name</h4></label>
@@ -47,6 +54,11 @@
           </div>
 
           <div class="form-group col-lg-4 col-md-4">
+            <label><h4>Show Cover URL</h4></label>
+            <input class="form-control" type="text" v-model="picture"/>
+          </div>
+
+          <div class="form-group col-lg-4 col-md-4">
             <label><h4>Status</h4></label>
             <select  class="form-control" v-model="status">
               <option value="" selected>Select Status</option>
@@ -56,14 +68,10 @@
             </select>
           </div>
 
-            <div class="form-group col-lg-4 col-md-4">
-              <label><h4>Show Cover URL</h4></label>
-              <input class="form-control" type="text" v-model="picture"/>
-            </div>
 
             <div class="form-group col-lg-4 col-md-4">
-              <label>Rating</label>
-                <star-rating v-model="rating"></star-rating>
+              <label><h4>Rating</h4></label>
+                <star-rating v-model="rating" v-bind:star-size="30"></star-rating>
             </div>
 
           <div class="form-group col-lg-12">
@@ -210,6 +218,15 @@ img {
 
 i {
   color: black;
+}
+
+.show-name {
+  color: white;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
 }
 
 

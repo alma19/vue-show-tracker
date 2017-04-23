@@ -12,8 +12,8 @@
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
              </button>
-             <i class="fa fa-television" aria-hidden="true"></i>
-             <a class="navbar-brand" href="" id="home">TV Show Tracker</a>
+
+             <a class="navbar-brand" href="" id="home"> TV Show Tracker</a>
            </div>
 
            <!-- Collect the nav links, forms, and other content for toggling -->
@@ -64,7 +64,7 @@ import ShowForm from './ShowForm';
 import MainLoader from './MainLoader';
 import Navigation from './Navigation';
 import ShowFooter from './ShowFooter';
-import StarRating from 'vue-star-rating'; 
+import StarRating from 'vue-star-rating';
 
 
 export default {
@@ -145,12 +145,12 @@ body {
 }
 
 .navigation {
-  i {
-    font-size: 2em;
-    position: relative;
-    top: 11px;
-    float: left;
-  }
+  // i {
+  //   font-size: 2em;
+  //   position: relative;
+  //   top: 11px;
+  //   float: left;
+  // }
 
   a {
     pointer: cursor;

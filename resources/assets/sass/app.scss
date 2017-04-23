@@ -15,6 +15,7 @@ $purple: #7e6e81;
 $brown: #bca68b;
 $blue: #3f4664;
 $gray: #7e7e85;
+$yellow: #ffd055;
 
 
 body {
@@ -70,6 +71,14 @@ textarea.form-control {
 
 #box4 {
   background-color: $blue;
+}
+
+#box5 {
+  background-color: $yellow;
+}
+
+#box6 {
+  background-color: black; 
 }
 
 /*TYPOGRAPHY */
@@ -175,9 +184,10 @@ h4 {
 /*NAV STYLES */
 .navigation {
   i {
-    font-size: 2em;
+    font-size: 1.5em;
     position: relative;
-    top: 11px;
+    margin-right: 10px;
+    top: -5px;
     float: left;
   }
 
@@ -187,6 +197,7 @@ h4 {
 
   #home {
     margin-left: 0%;
+    font-size: 2em;
   }
 
   .navbar-default {
@@ -196,6 +207,7 @@ h4 {
 
   .navbar-default .navbar-nav > li > a {
     color: black;
+    font-size: 1.3em;
   }
 
   .navbar-default .navbar-brand {

@@ -25,8 +25,8 @@
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
              </button>
-             <i class="fa fa-television" aria-hidden="true"></i>
-             <a class="navbar-brand" href="" id="home">TV Show Tracker</a>
+
+             <a class="navbar-brand" href="" id="home"> TV Show Tracker</a>
            </div>
 
            <!-- Collect the nav links, forms, and other content for toggling -->
@@ -71,6 +71,17 @@
             <p class="color-text">#3F4664</p>
             </div>
 
+            <div class="col-lg-6 col-md-6"></div>
+
+            <div class="col-lg-3 col-md-3 col-xs-6 sizing">
+            <div class="color-box" id="box5"></div>
+            <p class="color-text">  #FFD055</p>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-xs-6 sizing">
+            <div class="color-box" id="box6"></div>
+            <p class="color-text">  #000000</p>
+            </div>
 
 
 
