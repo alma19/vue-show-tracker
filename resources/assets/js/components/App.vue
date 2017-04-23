@@ -13,14 +13,14 @@
                <span class="icon-bar"></span>
              </button>
 
-             <a class="navbar-brand" href="" id="home"> TV Show Tracker</a>
+             <a class="navbar-brand" href="" id="home">   TV Show Tracker</a>
            </div>
 
            <!-- Collect the nav links, forms, and other content for toggling -->
            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
              <ul class="nav navbar-nav navbar-right">
                <li><a href="">All Shows</a></li>
-               <li><a @click="createForm()" @newShow="createForm">New Show</a></li>
+               <li><a @click="createForm()" :createForm="createForm">New Show</a></li>
              </ul>
            </div><!-- /.navbar-collapse -->
          </div><!-- /.container-fluid -->
@@ -36,11 +36,12 @@
     </div>
 
 
-      <div v-if="showForm">
-        <ShowForm @created="fetch"></ShowForm>
+      <div v-show="showForm">
+        <ShowForm @created="fetch" @cancelled="cancelling"></ShowForm>
       </div>
 
-     <div class="ShowList" v-show="showList">
+      <!-- @updated & @deleted is from Show.vue, what was emitted for the remove() and save() methods -->
+     <div class="ShowList">
       <Show v-for="(show, index) in shows" :key="index" :show="show" @updated="update" @deleted="remove(index)"></Show>
     </div>
 
@@ -81,7 +82,6 @@ export default {
     return {
       shows: [],
       showForm: false,
-      showList: true,
       loading: false,
     }
   },
@@ -93,10 +93,11 @@ export default {
   methods: {
     createForm() {
       this.showForm = true;
-      // this.showList = false;
       this.creating = true;
+      this.show.creating = true;
+      creating: true;
       console.log('createForm');
-      console.log(this.creating);
+      console.log('this.creating = ' + this.creating);
     },
 
     fetch (){
@@ -129,8 +130,20 @@ export default {
      remove (i) {
        console.log(`App -> remove ID: ${i}`);
        this.shows.splice(i, 1);
-     }
+     },
 
+     cancelling () {
+       console.log('cancelCreate');
+       this.name = '';
+       this.channel = '';
+       this.genre = '';
+       this.status = '';
+       this.notes = '';
+       this.rating = '';
+       this.picture = '';
+       this.favorite = false;
+       this.showForm = false;
+     }
   } // end methods
 } // end export defaults
 </script>

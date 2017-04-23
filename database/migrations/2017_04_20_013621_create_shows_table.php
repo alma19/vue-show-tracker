@@ -20,8 +20,8 @@ class CreateShowsTable extends Migration
           $table->string('genre');
           $table->string('status');
           $table->string('notes');
-          $table->string('picture'); 
-          $table->integer('rating');
+          $table->string('picture');
+          $table->string('rating');
           $table->boolean('favorite');
           $table->timestamps();
       });

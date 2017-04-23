@@ -1,5 +1,5 @@
 <template>
-  <div class="ShowForm">
+  <div class="ShowForm" v-show="creating">
 
   <h1>New Show</h1>
 
@@ -24,7 +24,7 @@
     <input class="form-control" type="text" v-model="picture"/>
   </div>
 
-  
+
   <div class="form-group col-lg-4 col-md-4">
     <label><h4>Status</h4></label>
     <select  class="form-control" v-model="status">
@@ -68,7 +68,8 @@
 
 
   <button class="btn btn-default" @click="create" :disabled="loading">Add Show</button>
-  <button class="btn btn-default" @click="cancelCreate">Cancel</button>
+  <button class="btn btn-default" @click.prevent="cancelCreate">Cancel</button>
+  <Loader v-show="loading"></Loader>
   </div>
 </template>
 
@@ -85,6 +86,9 @@ export default {
     StarRating
   },
 
+  props: [
+    'createForm'
+  ],
   data() {
     return {
       name: '',
@@ -100,9 +104,17 @@ export default {
     }
   },
 
+  mounted () {
+    console.log("ShowForm mounted");
+    creating: true;
+    console.log('this.creating = ' + this.creating);
+  },
+
   methods: {
+
     setRating: function(rating) {
       this.rating = rating;
+      console.log(rating);
     },
     create (){
       console.log('ShowForm -> create');
@@ -111,7 +123,7 @@ export default {
         return false;
       }
       this.loading = true;
-      this.creating = true;
+      this.creating = false;
       this.sendRequest();
     },
     sendRequest () {
@@ -148,18 +160,9 @@ export default {
       this.picture = '';
       this.favorite = false;
     },
+    //cancel creating a new show
     cancelCreate (){
-      console.log('cancelCreate');
-      this.name = '';
-      this.channel = '';
-      this.genre = '';
-      this.status = '';
-      this.notes = '';
-      this.rating = '';
-      this.picture = '';
-      this.favorite = false;
-      this.creating = false;
-      this.$emit('newShow');
+      this.$emit('cancelled')
     }
   }
 };

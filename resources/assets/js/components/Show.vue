@@ -4,6 +4,7 @@
 
       <div class="live" v-show="!editing">
 
+        <div v-show="showing">
           <div class="container col-lg-4 col-md-4">
             <img :src="show.picture" class="pic"/>
             <div class="show-text">
@@ -14,7 +15,7 @@
               </div>
               <div class="show-icons">
 
-               <a class="tool" href="#" @click.prevent="editing = true" v-show="!editing">
+               <a class="tool" href="#" @click.prevent="editing = true" v-show="!editing"s>
                  <i class="fa fa-pencil" aria-hidden="true"></i>
                </a>
 
@@ -22,12 +23,14 @@
                 <i class="fa fa-trash" aria-hidden="true"></i>
               </a>
               </div>
-            </div>
-
+            </div> <!--show test-->
         </div>
 
 
-      </div>
+      </div> <!--live / !editing-->
+
+
+      </div> <!-- show -->
 
 
       <div class="editing" v-show="editing">
@@ -120,14 +123,16 @@ export default {
       rating: this.show.rating,
       picture: this.show.picture,
       favorite: this.show.favorite,
+      showing: true,
       editing: false,
       loading: false
     }
   },
 
   methods: {
+    // removing info from database (axios.delete)& then from page (this.$emit)
     remove () {
-      console.log('Contact->remove');
+      console.log('Show->remove');
       this.loading = true;
       axios.delete(`/shows/${this.show.id}`)
         .then((response) => {
@@ -142,6 +147,8 @@ export default {
         });
     },
 
+    // saves updated info to database
+    // saves updated info to what's displayed on the page
     save () {
       console.log('Show -> save');
       axios.put(`/shows/${this.show.id}`, {
@@ -154,6 +161,7 @@ export default {
         picture: this.picture,
         favorite: this.favorite
       })
+      // this.$emit -> updates what's displayed on page -> App.vue
       .then((response) =>{
         console.log('Show -> success');
         this.$emit('updated', {
@@ -175,6 +183,8 @@ export default {
       });
     }, // end save
 
+    // keeps the info in the form as the current state, no updates
+    //  this.show.x is the current state
     cancel () {
       console.log('Show -> cancel');
       this.name= this.show.name;
