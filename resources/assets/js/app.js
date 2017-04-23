@@ -13,9 +13,17 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('App', require('./components/App.vue'));
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import ShowForm from './components/ShowForm.vue'
+import App from './components/App.vue'
+import StarRating from 'vue-star-rating'
 
-const app = new Vue({
+
+
+  Vue.component('App', require('./components/App.vue'));
+
+ const app = new Vue ({
     el: '#app',
     template: '<App />'
-});
+  });

@@ -8,6 +8,7 @@
             <img :src="show.picture" class="pic"/>
             <div class="show-text">
               <h5>{{ show.name }}</h5>
+              <p> <star-rating :rating="rating" v-bind:show-rating="false">{{ show.rating }}</star-rating></p>
               <div class="show-icons">
 
                <a class="tool" href="#" @click.prevent="editing = true" v-show="!editing">
@@ -27,6 +28,8 @@
 
 
       <div class="editing" v-show="editing">
+
+        <div class="col-lg-12"></div>
 
           <div class="form-group col-lg-4 col-md-4">
             <label><h4>Name</h4></label>
@@ -59,15 +62,8 @@
             </div>
 
             <div class="form-group col-lg-4 col-md-4">
-              <label><h4>Rating</h4></label>
-              <select class="form-control" v-model="rating">
-                <option value="" selected></option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
+              <label>Rating</label>
+                <star-rating v-model="rating"></star-rating>
             </div>
 
           <div class="form-group col-lg-12">
@@ -95,7 +91,13 @@
 
 <script>
 import axios from 'axios';
+import StarRating from 'vue-star-rating';
+
 export default {
+  components: {
+    StarRating
+  },
+
   props: [
     'show'
   ],

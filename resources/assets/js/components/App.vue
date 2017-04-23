@@ -64,6 +64,7 @@ import ShowForm from './ShowForm';
 import MainLoader from './MainLoader';
 import Navigation from './Navigation';
 import ShowFooter from './ShowFooter';
+import StarRating from 'vue-star-rating'; 
 
 
 export default {
@@ -178,7 +179,7 @@ body {
 }
 
 .intro {
-  text-align: center; 
+  text-align: center;
 }
 
 

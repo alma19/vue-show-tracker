@@ -33,7 +33,7 @@
       <input class="form-control" type="text" v-model="picture"/>
     </div>
 
-    <div class="form-group col-lg-4 col-md-4">
+    <!-- <div class="form-group col-lg-4 col-md-4">
       <label><h4>Rating</h4></label>
       <select class="form-control" v-model="rating">
         <option value="" selected></option>
@@ -43,6 +43,14 @@
         <option value="4">4</option>
         <option value="5">5</option>
       </select>
+    </div> -->
+
+    <div class="form-group col-lg-4 col-md-4">
+      <label>Rating</label>
+        <star-rating
+          v-model="rating"
+          @rating-selected="setRating">
+        </star-rating>
     </div>
 
   <div class="form-group col-lg-12">
@@ -66,10 +74,12 @@
 
 import axios from 'axios';
 import Loader from './Loader';
+import StarRating from 'vue-star-rating';
 
 export default {
   components: {
-    Loader
+    Loader,
+    StarRating
   },
 
   data() {
@@ -88,6 +98,9 @@ export default {
   },
 
   methods: {
+    setRating: function(rating) {
+      this.rating = rating;
+    }, 
     create (){
       console.log('ShowForm -> create');
       if(this.loading) {
