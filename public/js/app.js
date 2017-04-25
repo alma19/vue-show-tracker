@@ -22188,22 +22188,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -22232,6 +22216,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   mounted: function mounted() {
     this.fetch();
+    console.log(shows);
   },
 
 
@@ -22390,6 +22375,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -22397,6 +22384,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
+    shows: [],
     ShowForm: __WEBPACK_IMPORTED_MODULE_1__ShowForm___default.a
   },
 
@@ -22404,14 +22392,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   data: function data() {
     return {
-      // name: this.show.name,
-      // channel: this.show.channel,
-      // genre: this.show.genre,
-      // status: this.show.status,
-      // notes: this.show.notes,
-      // rating: this.show.rating,
-      // picture: this.show.picture,
-      // favorite: this.show.favorite,
       showForm: false
     };
   },
@@ -22419,8 +22399,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   methods: {
     createForm: function createForm() {
-      console.log('createForm');
-      this.showForm = true;
+      console.log('Navigation createForm');
+      this.$emit('openForm');
     }
   }
 });
@@ -22659,6 +22639,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Loader___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Loader__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_star_rating__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_star_rating___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue_star_rating__);
+//
+//
 //
 //
 //
@@ -42809,7 +42791,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "show-text"
   }, [_c('h4', {
     staticClass: "show-name"
-  }, [_vm._v(_vm._s(_vm.show.name))]), _vm._v(" "), _c('div', {
+  }, [_vm._v(_vm._s(_vm.show.name))]), _vm._v("\n            " + _vm._s(_vm.show.status) + "\n            "), _c('div', {
     staticClass: "stars"
   }, [_c('star-rating', {
     attrs: {
@@ -42867,9 +42849,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "editing"
     }],
     staticClass: "editing"
-  }, [_c('div', {
-    staticClass: "col-lg-12"
-  }), _vm._v(" "), _c('div', {
+  }, [_c('h3', [_vm._v("Edit Show")]), _vm._v(" "), _c('div', {
     staticClass: "form-group col-lg-12 col-md-12"
   }, [_vm._m(0), _vm._v(" "), _c('input', {
     directives: [{
@@ -43008,7 +42988,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "rating"
     }
-  })], 1), _vm._v(" "), _c('label', [_vm._v("Favorite")]), _vm._v(" "), _c('input', {
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "form-group col-lg-12 col-md-12"
+  }, [_vm._m(6), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -43040,7 +43022,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }
-  }), _vm._v(" "), _c('p', [_c('button', {
+  })]), _vm._v(" "), _c('p', [_c('button', {
     staticClass: "btn btn-default",
     on: {
       "click": _vm.save
@@ -43063,6 +43045,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('label', [_c('h4', [_vm._v("Status")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('label', [_c('h4', [_vm._v("Rating")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('label', [_c('h4', [_vm._v("Favorite")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -43221,7 +43205,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "rating"
     }
-  })], 1), _vm._v(" "), _vm._m(6), _vm._v(" "), _c('input', {
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_vm._m(6), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -43253,7 +43239,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }
-  }), _vm._v(" "), _c('div', {
+  })]), _vm._v(" "), _c('div', {
     staticClass: "buttons"
   }, [_c('button', {
     staticClass: "btn btn-default",
@@ -43292,7 +43278,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('label', [_c('h4', [_vm._v("Rating")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('label', [_c('h4', [_vm._v("Favrotie")])])
+  return _c('label', [_c('h4', [_vm._v("Favorite")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -43322,7 +43308,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "nav navbar-nav navbar-right"
   }, [_vm._m(1), _vm._v(" "), _c('li', [_c('a', {
     attrs: {
-      "show": _vm.show
+      "createForm": _vm.createForm
     },
     on: {
       "click": function($event) {
@@ -43478,31 +43464,57 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('div', {
-    staticClass: "navigation"
-  }, [_c('nav', {
-    staticClass: "navbar navbar-default"
-  }, [_c('div', {
-    staticClass: "container-fluid"
-  }, [_vm._m(0), _vm._v(" "), _c('div', {
-    staticClass: "collapse navbar-collapse",
-    attrs: {
-      "id": "bs-example-navbar-collapse-1"
+  return _c('div', [_c('Navigation', {
+    on: {
+      "openForm": _vm.createForm
     }
-  }, [_c('ul', {
-    staticClass: "nav navbar-nav navbar-right"
-  }, [_vm._m(1), _vm._v(" "), _c('li', [_c('a', {
+  }), _vm._v(" "), _c('div', {
+    staticClass: "container"
+  }, [_c('div', {
+    staticClass: "intro"
+  }, [_c('p', [_vm._v("\n      Intro  test here blah blah blahHere\n    ")]), _vm._v(" "), _c('div', {
+    staticClass: "intro-filter"
+  }, [_c('ul', [_c('li', [_c('a', {
     attrs: {
-      "createForm": _vm.createForm
+      "href": "#"
     },
     on: {
       "click": function($event) {
-        _vm.createForm()
+        $event.preventDefault();
+        _vm.filter('')
       }
     }
-  }, [_vm._v("New Show")])])])])])])]), _vm._v(" "), _c('div', {
-    staticClass: "container"
-  }, [_vm._m(2), _vm._v(" "), _c('div', {
+  }, [_vm._v("All Shows")])]), _vm._v(" "), _c('li', [_c('a', {
+    attrs: {
+      "href": "#"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.filter('To Watch')
+      }
+    }
+  }, [_vm._v("To Watch")])]), _vm._v(" "), _c('li', [_c('a', {
+    attrs: {
+      "href": "#"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.filter('Watching')
+      }
+    }
+  }, [_vm._v("Watching")])]), _vm._v(" "), _c('li', [_c('a', {
+    attrs: {
+      "href": "#"
+    },
+    on: {
+      "click": function($event) {
+        if (!('button' in $event) && _vm._k($event.keyCode, "prevnet")) { return null; }
+        _vm.filter('Watched')
+      }
+    }
+  }, [_vm._v("Watched")])])])])]), _vm._v(" "), _c('div', {
     directives: [{
       name: "show",
       rawName: "v-show",
@@ -43541,43 +43553,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "name": "fade"
     }
   }, [(_vm.loading) ? _c('MainLoader') : _vm._e()], 1)], 1), _vm._v(" "), _c('ShowFooter')], 1)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "navbar-header"
-  }, [_c('button', {
-    staticClass: "navbar-toggle collapsed",
-    attrs: {
-      "type": "button",
-      "data-toggle": "collapse",
-      "data-target": "#bs-example-navbar-collapse-1",
-      "aria-expanded": "false"
-    }
-  }, [_c('span', {
-    staticClass: "sr-only"
-  }, [_vm._v("Toggle navigation")]), _vm._v(" "), _c('span', {
-    staticClass: "icon-bar"
-  }), _vm._v(" "), _c('span', {
-    staticClass: "icon-bar"
-  }), _vm._v(" "), _c('span', {
-    staticClass: "icon-bar"
-  })]), _vm._v(" "), _c('a', {
-    staticClass: "navbar-brand",
-    attrs: {
-      "href": "",
-      "id": "home"
-    }
-  }, [_vm._v("   TV Show Tracker")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('li', [_c('a', {
-    attrs: {
-      "href": ""
-    }
-  }, [_vm._v("All Shows")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "intro"
-  }, [_c('p', [_vm._v("\n      Intro Here\n    ")])])
-}]}
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()

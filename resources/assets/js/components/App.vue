@@ -1,48 +1,32 @@
 <template>
   <div>
-    <div class="navigation">
-      <nav class="navbar navbar-default">
-         <div class="container-fluid">
+    <Navigation @openForm="createForm"></Navigation>
 
-           <!-- Brand and toggle get grouped for better mobile display -->
-           <div class="navbar-header">
-             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-               <span class="sr-only">Toggle navigation</span>
-               <span class="icon-bar"></span>
-               <span class="icon-bar"></span>
-               <span class="icon-bar"></span>
-             </button>
-
-             <a class="navbar-brand" href="" id="home">   TV Show Tracker</a>
-           </div>
-
-           <!-- Collect the nav links, forms, and other content for toggling -->
-           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-             <ul class="nav navbar-nav navbar-right">
-               <li><a href="">All Shows</a></li>
-               <li><a @click="createForm()" :createForm="createForm">New Show</a></li>
-             </ul>
-           </div><!-- /.navbar-collapse -->
-         </div><!-- /.container-fluid -->
-       </nav>
-    </div>
 
     <div class="container">
 
     <div class="intro">
       <p>
-        Intro Here
+        Intro  test here blah blah blahHere
       </p>
+      <div class="intro-filter">
+        <ul>
+          <li><a href="#" @click.prevent="filter('')">All Shows</a></li>
+          <li><a href="#" @click.prevent="filter('To Watch')">To Watch</a></li>
+          <li><a href="#" @click.prevent="filter('Watching')">Watching</a></li>
+          <li><a href="#" @click.prevnet="filter('Watched')">Watched</a></li>
+        </ul>
+      </div>
     </div>
 
-
-      <div v-show="showForm">
+    <!--create new show -->
+    <div v-show="showForm">
         <ShowForm @created="fetch" @cancelled="cancelling"></ShowForm>
-      </div>
+    </div>
 
       <!-- @updated & @deleted is from Show.vue, what was emitted for the remove() and save() methods -->
      <div class="ShowList">
-      <Show v-for="(show, index) in shows" :key="index" :show="show" @updated="update" @deleted="remove(index)"></Show>
+      <Show v-for="(show, index) in shows" :key="index" :show="show" @updated="update" @deleted="remove(index)" ></Show>
     </div>
 
     <p v-show="shows.length === 0">You do not have any contacts yet. Why don't you add one?</p>
@@ -88,6 +72,7 @@ export default {
 
   mounted () {
     this.fetch();
+    console.log(shows);
   },
 
   methods: {

@@ -9,6 +9,7 @@
             <img :src="show.picture" class="pic"/>
             <div class="show-text">
               <h4 class="show-name">{{ show.name }}</h4>
+              {{show.status}}
               <div class="stars">
                 <star-rating :read-only="true" :rating="rating" v-bind:show-rating="false" v-bind:star-size="30">{{ show.rating }}
                 </star-rating>
@@ -35,10 +36,7 @@
 
       <div class="editing" v-show="editing">
 
-
-
-        <div class="col-lg-12"></div>
-
+        <h3>Edit Show</h3>
         <div class="form-group col-lg-12 col-md-12">
             <label><h4>Name</h4></label>
             <input class="form-control" type="text" v-model="name" />
@@ -74,9 +72,11 @@
                 <star-rating v-model="rating" v-bind:star-size="30"></star-rating>
             </div>
 
+          <div class="form-group col-lg-12 col-md-12">
+            <label><h4>Favorite</h4></label>
+            <input class="form-control" type="checkbox" v-model="favorite" />
+          </div>
 
-          <label>Favorite</label>
-          <input class="form-control" type="checkbox" v-model="favorite" />
 
 
         <p>

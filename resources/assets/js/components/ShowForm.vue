@@ -57,9 +57,11 @@
     </div>
 
 
-
-  <label><h4>Favrotie</h4></label>
+<div class="form-group">
+  <label><h4>Favorite</h4></label>
   <input class="form-control" type="checkbox" v-model="favorite" />
+</div>
+
 
 
   <div class="buttons">
