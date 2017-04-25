@@ -1,5 +1,5 @@
 <template>
-  <div class="ShowForm" v-show="creating">
+  <div class="ShowForm">
 
   <h1>New Show</h1>
 
@@ -56,20 +56,19 @@
         </star-rating>
     </div>
 
-  <div class="form-group col-lg-12">
-    <label><h4>Notes</h4></label>
-    <textarea class="form-control" name="notes" id="notes" placeholder="Notes" v-model="notes"></textarea>
-  </div>
 
 
   <label><h4>Favrotie</h4></label>
   <input class="form-control" type="checkbox" v-model="favorite" />
 
 
+  <div class="buttons">
+    <button class="btn btn-default" @click="create" :disabled="loading">Add Show</button>
+    <button class="btn btn-default" @click.prevent="cancelCreate">Cancel</button>
+    <Loader v-show="loading"></Loader>
+  </div>
 
-  <button class="btn btn-default" @click="create" :disabled="loading">Add Show</button>
-  <button class="btn btn-default" @click.prevent="cancelCreate">Cancel</button>
-  <Loader v-show="loading"></Loader>
+
   </div>
 </template>
 
@@ -95,21 +94,12 @@ export default {
       channel: '',
       genre: '',
       status: '',
-      notes: '',
       rating: '',
       picture: '',
-      creating: true,
       favorite: false,
       loading: false
     }
   },
-
-  mounted () {
-    console.log("ShowForm mounted");
-    creating: true;
-    console.log('this.creating = ' + this.creating);
-  },
-
   methods: {
 
     setRating: function(rating) {
@@ -123,7 +113,6 @@ export default {
         return false;
       }
       this.loading = true;
-      this.creating = false;
       this.sendRequest();
     },
     sendRequest () {
@@ -132,7 +121,6 @@ export default {
         channel: this.channel,
         genre: this.genre,
         status: this.status,
-        notes: this.notes,
         rating: this.rating,
         picture: this.picture,
         favorite: this.favorite
@@ -155,13 +143,18 @@ export default {
       this.channel = '';
       this.genre = '';
       this.status = '';
-      this.notes = '';
       this.rating = '';
       this.picture = '';
       this.favorite = false;
     },
     //cancel creating a new show
     cancelCreate (){
+      this.name = '';
+      this.channel = '';
+      this.genre = '';
+      this.status = '';
+      this.rating = '';
+      this.picture = '';
       this.$emit('cancelled')
     }
   }
@@ -169,6 +162,10 @@ export default {
 
 </script>
 
-<style>
+<style lang="scss">
+
+.buttons {
+  display: flex;
+}
 
 </style>

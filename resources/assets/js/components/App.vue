@@ -93,16 +93,13 @@ export default {
   methods: {
     createForm() {
       this.showForm = true;
-      this.creating = true;
-      this.show.creating = true;
-      creating: true;
       console.log('createForm');
-      console.log('this.creating = ' + this.creating);
     },
 
     fetch (){
       console.log('App->fetch');
       this.loading = true;
+      this.showForm = false;
       axios.get('/shows')
         .then((response) => {
           console.log('App ->fetch success');

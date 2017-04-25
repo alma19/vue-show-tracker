@@ -1039,7 +1039,7 @@ module.exports = defaults;
 
 
 /* styles */
-__webpack_require__(76)
+__webpack_require__(94)
 
 var Component = __webpack_require__(1)(
   /* script */
@@ -22238,17 +22238,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   methods: {
     createForm: function createForm() {
       this.showForm = true;
-      this.creating = true;
-      this.show.creating = true;
-      creating: true;
       console.log('createForm');
-      console.log('this.creating = ' + this.creating);
     },
     fetch: function fetch() {
       var _this = this;
 
       console.log('App->fetch');
       this.loading = true;
+      this.showForm = false;
       __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/shows').then(function (response) {
         console.log('App ->fetch success');
         console.log(response.data);
@@ -22532,14 +22529,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -22557,7 +22546,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       channel: this.show.channel,
       genre: this.show.genre,
       status: this.show.status,
-      notes: this.show.notes,
       rating: this.show.rating,
       picture: this.show.picture,
       favorite: this.show.favorite,
@@ -22598,7 +22586,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         channel: this.channel,
         genre: this.genre,
         status: this.status,
-        notes: this.notes,
         rating: this.rating,
         picture: this.picture,
         favorite: this.favorite
@@ -22612,7 +22599,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           channel: _this2.channel,
           genre: _this2.genre,
           status: _this2.status,
-          notes: _this2.notes,
           rating: _this2.rating,
           picture: _this2.picture,
           favorite: _this2.favorite
@@ -22633,7 +22619,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.channel = this.show.channel;
       this.genre = this.show.genre;
       this.status = this.show.status;
-      this.notes = this.show.notes;
       this.rating = this.show.rating;
       this.picture = this.show.picture;
       this.favorite = this.show.favorite;
@@ -22749,7 +22734,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -22769,20 +22753,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       channel: '',
       genre: '',
       status: '',
-      notes: '',
       rating: '',
       picture: '',
-      creating: true,
       favorite: false,
       loading: false
     };
   },
-  mounted: function mounted() {
-    console.log("ShowForm mounted");
-    creating: true;
-    console.log('this.creating = ' + this.creating);
-  },
-
 
   methods: {
 
@@ -22797,7 +22773,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return false;
       }
       this.loading = true;
-      this.creating = false;
       this.sendRequest();
     },
     sendRequest: function sendRequest() {
@@ -22808,7 +22783,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         channel: this.channel,
         genre: this.genre,
         status: this.status,
-        notes: this.notes,
         rating: this.rating,
         picture: this.picture,
         favorite: this.favorite
@@ -22828,7 +22802,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.channel = '';
       this.genre = '';
       this.status = '';
-      this.notes = '';
       this.rating = '';
       this.picture = '';
       this.favorite = false;
@@ -22836,6 +22809,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     //cancel creating a new show
     cancelCreate: function cancelCreate() {
+      this.name = '';
+      this.channel = '';
+      this.genre = '';
+      this.status = '';
+      this.rating = '';
+      this.picture = '';
       this.$emit('cancelled');
     }
   }
@@ -25293,20 +25272,8 @@ exports = module.exports = __webpack_require__(2)();
 exports.push([module.i, "\n.star[data-v-248fe0b8] {\r\n    display: inline-block;\n}\n.pointer[data-v-248fe0b8] {\r\n    cursor: pointer;\n}\n.star-rating[data-v-248fe0b8] {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\n}\n.inline[data-v-248fe0b8] {\r\n    display: -webkit-inline-box;\r\n    display: -ms-inline-flexbox;\r\n    display: inline-flex;\n}\n.rating-text[data-v-248fe0b8] {\r\n    margin-top: 7px;\r\n    margin-left: 7px;\n}\r\n", ""]);
 
 /***/ }),
-/* 50 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)();
-exports.push([module.i, "\nimg {\r\n  width: 300px;\r\n  height: 450px;\r\n  margin-top: 7%;\n}\n.show-text {\r\n  color: #fff;\r\n  background-color: #7e6e81;\r\n  width: 300px;\r\n  text-align: center;\r\n  margin-top: 3%;\r\n  padding: 10px;\n}\n.show-icons {\r\n  font-size: 1.5em;\n}\ni {\r\n  color: black;\n}\n.show-name {\r\n  color: white;\n}\n.stars {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\r\n\r\n\r\n", ""]);
-
-/***/ }),
-/* 51 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)();
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
-
-/***/ }),
+/* 50 */,
+/* 51 */,
 /* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -42580,7 +42547,7 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(75)
+__webpack_require__(92)
 
 var Component = __webpack_require__(1)(
   /* script */
@@ -42815,7 +42782,7 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "Show"
+    staticClass: "Show col-lg-4 col-md-4"
   }, [_c('div', {
     directives: [{
       name: "show",
@@ -42832,7 +42799,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "showing"
     }]
   }, [_c('div', {
-    staticClass: "container col-lg-4 col-md-4"
+    staticClass: "container"
   }, [_c('img', {
     staticClass: "pic",
     attrs: {
@@ -42902,8 +42869,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "editing"
   }, [_c('div', {
     staticClass: "col-lg-12"
-  }), _vm._v(" "), _c('h1', [_vm._v("View & Edit Show")]), _vm._v(" "), _c('div', {
-    staticClass: "form-group col-lg-4 col-md-4"
+  }), _vm._v(" "), _c('div', {
+    staticClass: "form-group col-lg-12 col-md-12"
   }, [_vm._m(0), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
@@ -42925,7 +42892,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }
   })]), _vm._v(" "), _c('div', {
-    staticClass: "form-group col-lg-4 col-md-4"
+    staticClass: "form-group col-lg-12 col-md-12"
   }, [_vm._m(1), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
@@ -42947,7 +42914,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }
   })]), _vm._v(" "), _c('div', {
-    staticClass: "form-group col-lg-4 col-md-4"
+    staticClass: "form-group col-lg-12 col-md-12"
   }, [_vm._m(2), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
@@ -42969,7 +42936,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }
   })]), _vm._v(" "), _c('div', {
-    staticClass: "form-group col-lg-4 col-md-4"
+    staticClass: "form-group col-lg-12 col-md-12"
   }, [_vm._m(3), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
@@ -42991,7 +42958,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }
   })]), _vm._v(" "), _c('div', {
-    staticClass: "form-group col-lg-4 col-md-4"
+    staticClass: "form-group col-lg-12 col-md-12"
   }, [_vm._m(4), _vm._v(" "), _c('select', {
     directives: [{
       name: "model",
@@ -43029,7 +42996,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "value": "Watched"
     }
   }, [_vm._v("Watched")])])]), _vm._v(" "), _c('div', {
-    staticClass: "form-group col-lg-4 col-md-4"
+    staticClass: "form-group col-lg-12 col-md-12"
   }, [_vm._m(5), _vm._v(" "), _c('star-rating', {
     attrs: {
       "star-size": 30
@@ -43041,31 +43008,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "rating"
     }
-  })], 1), _vm._v(" "), _c('div', {
-    staticClass: "form-group col-lg-12"
-  }, [_vm._m(6), _vm._v(" "), _c('textarea', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.notes),
-      expression: "notes"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      "name": "notes",
-      "id": "notes",
-      "placeholder": "Notes"
-    },
-    domProps: {
-      "value": (_vm.notes)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.notes = $event.target.value
-      }
-    }
-  })]), _vm._v(" "), _c('label', [_vm._v("Favorite")]), _vm._v(" "), _c('input', {
+  })], 1), _vm._v(" "), _c('label', [_vm._v("Favorite")]), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -43120,8 +43063,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('label', [_c('h4', [_vm._v("Status")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('label', [_c('h4', [_vm._v("Rating")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('label', [_c('h4', [_vm._v("Notes")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -43137,12 +43078,6 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    directives: [{
-      name: "show",
-      rawName: "v-show",
-      value: (_vm.creating),
-      expression: "creating"
-    }],
     staticClass: "ShowForm"
   }, [_c('h1', [_vm._v("New Show")]), _vm._v(" "), _c('div', {
     staticClass: "form-group col-lg-4 col-md-4"
@@ -43286,31 +43221,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "rating"
     }
-  })], 1), _vm._v(" "), _c('div', {
-    staticClass: "form-group col-lg-12"
-  }, [_vm._m(6), _vm._v(" "), _c('textarea', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.notes),
-      expression: "notes"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      "name": "notes",
-      "id": "notes",
-      "placeholder": "Notes"
-    },
-    domProps: {
-      "value": (_vm.notes)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.notes = $event.target.value
-      }
-    }
-  })]), _vm._v(" "), _vm._m(7), _vm._v(" "), _c('input', {
+  })], 1), _vm._v(" "), _vm._m(6), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -43342,7 +43253,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }
-  }), _vm._v(" "), _c('button', {
+  }), _vm._v(" "), _c('div', {
+    staticClass: "buttons"
+  }, [_c('button', {
     staticClass: "btn btn-default",
     attrs: {
       "disabled": _vm.loading
@@ -43365,7 +43278,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       value: (_vm.loading),
       expression: "loading"
     }]
-  })], 1)
+  })], 1)])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('label', [_c('h4', [_vm._v("Name")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -43378,8 +43291,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('label', [_c('h4', [_vm._v("Status")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('label', [_c('h4', [_vm._v("Rating")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('label', [_c('h4', [_vm._v("Notes")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('label', [_c('h4', [_vm._v("Favrotie")])])
 }]}
@@ -46138,58 +46049,8 @@ if(false) {
 }
 
 /***/ }),
-/* 75 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(50);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(3)("5713cd0c", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-2bd671b4!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Show.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-2bd671b4!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Show.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 76 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(51);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(3)("13a6e44f", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-4d501ad0!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShowForm.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-4d501ad0!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShowForm.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
+/* 75 */,
+/* 76 */,
 /* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -46361,6 +46222,79 @@ module.exports = function(module) {
 __webpack_require__(18);
 module.exports = __webpack_require__(19);
 
+
+/***/ }),
+/* 84 */,
+/* 85 */,
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)();
+exports.push([module.i, "\n.Show {\n  width: 300px;\n  height: 700px;\n}\n.Show img {\n    width: 300px;\n    height: 450px;\n    margin-top: 2%;\n}\n.Show .show-text {\n    color: #fff;\n    background-color: #7e6e81;\n    width: 300px;\n    text-align: center;\n    margin-top: 3%;\n    padding: 10px;\n}\n.Show .show-icons {\n    font-size: 1.5em;\n}\n.Show i {\n    color: black;\n}\n.Show .show-name {\n    color: white;\n}\n.Show .stars {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n}\n", ""]);
+
+/***/ }),
+/* 92 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(91);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("4767c119", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-2bd671b4!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Show.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-2bd671b4!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Show.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 93 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)();
+exports.push([module.i, "\n.buttons {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n", ""]);
+
+/***/ }),
+/* 94 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(93);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("571b395c", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-4d501ad0!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShowForm.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-4d501ad0!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShowForm.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
 
 /***/ })
 /******/ ]);

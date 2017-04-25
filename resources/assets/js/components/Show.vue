@@ -1,11 +1,11 @@
 <template>
-  <div class="Show">
+  <div class="Show col-lg-4 col-md-4">
 
 
       <div class="live" v-show="!editing">
 
         <div v-show="showing">
-          <div class="container col-lg-4 col-md-4">
+          <div class="container">
             <img :src="show.picture" class="pic"/>
             <div class="show-text">
               <h4 class="show-name">{{ show.name }}</h4>
@@ -23,7 +23,7 @@
                 <i class="fa fa-trash" aria-hidden="true"></i>
               </a>
               </div>
-            </div> <!--show test-->
+            </div> <!--show text-->
         </div>
 
 
@@ -39,29 +39,27 @@
 
         <div class="col-lg-12"></div>
 
-        <h1>View & Edit Show</h1>
-
-          <div class="form-group col-lg-4 col-md-4">
+        <div class="form-group col-lg-12 col-md-12">
             <label><h4>Name</h4></label>
             <input class="form-control" type="text" v-model="name" />
           </div>
 
-          <div class="form-group col-lg-4 col-md-4">
+          <div class="form-group col-lg-12 col-md-12">
             <label><h4>Channel</h4></label>
             <input class="form-control" type="text" v-model="channel" />
           </div>
 
-          <div class="form-group col-lg-4 col-md-4">
+          <div class="form-group col-lg-12 col-md-12">
             <label><h4>Genre</h4></label>
             <input class="form-control" type="text" v-model="genre"  />
           </div>
 
-          <div class="form-group col-lg-4 col-md-4">
+          <div class="form-group col-lg-12 col-md-12">
             <label><h4>Show Cover URL</h4></label>
             <input class="form-control" type="text" v-model="picture"/>
           </div>
 
-          <div class="form-group col-lg-4 col-md-4">
+          <div class="form-group col-lg-12 col-md-12">
             <label><h4>Status</h4></label>
             <select  class="form-control" v-model="status">
               <option value="" selected>Select Status</option>
@@ -71,16 +69,10 @@
             </select>
           </div>
 
-
-            <div class="form-group col-lg-4 col-md-4">
+            <div class="form-group col-lg-12 col-md-12">
               <label><h4>Rating</h4></label>
                 <star-rating v-model="rating" v-bind:star-size="30"></star-rating>
             </div>
-
-          <div class="form-group col-lg-12">
-            <label><h4>Notes</h4></label>
-            <textarea class="form-control" name="notes" id="notes" placeholder="Notes" v-model="notes"></textarea>
-          </div>
 
 
           <label>Favorite</label>
@@ -119,7 +111,6 @@ export default {
       channel: this.show.channel,
       genre: this.show.genre,
       status: this.show.status,
-      notes: this.show.notes,
       rating: this.show.rating,
       picture: this.show.picture,
       favorite: this.show.favorite,
@@ -156,7 +147,6 @@ export default {
         channel: this.channel,
         genre: this.genre,
         status: this.status,
-        notes: this.notes,
         rating: this.rating,
         picture: this.picture,
         favorite: this.favorite
@@ -170,7 +160,6 @@ export default {
           channel: this.channel,
           genre: this.genre,
           status: this.status,
-          notes: this.notes,
           rating: this.rating,
           picture: this.picture,
           favorite: this.favorite
@@ -191,7 +180,6 @@ export default {
       this.channel = this.show.channel;
       this.genre = this.show.genre;
       this.status = this.show.status;
-      this.notes = this.show.notes;
       this.rating = this.show.rating;
       this.picture = this.show.picture;
       this.favorite = this.show.favorite;
@@ -205,39 +193,46 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 
-img {
+.Show {
   width: 300px;
-  height: 450px;
-  margin-top: 7%;
+  height: 700px;
+
+  img {
+   width: 300px;
+     height: 450px;
+     margin-top: 2%;
+   }
+
+  .show-text {
+    color: #fff;
+    background-color: #7e6e81;
+    width: 300px;
+    text-align: center;
+    margin-top: 3%;
+    padding: 10px;
+  }
+
+  .show-icons {
+    font-size: 1.5em;
+  }
+
+  i {
+    color: black;
+  }
+
+  .show-name {
+    color: white;
+  }
+
+  .stars {
+    display: flex;
+    justify-content: center;
+  }
 }
 
-.show-text {
-  color: #fff;
-  background-color: #7e6e81;
-  width: 300px;
-  text-align: center;
-  margin-top: 3%;
-  padding: 10px;
-}
 
-.show-icons {
-  font-size: 1.5em;
-}
-
-i {
-  color: black;
-}
-
-.show-name {
-  color: white;
-}
-
-.stars {
-  display: flex;
-  justify-content: center;
-}
 
 
 </style>

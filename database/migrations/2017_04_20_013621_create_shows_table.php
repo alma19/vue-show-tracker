@@ -15,13 +15,12 @@ class CreateShowsTable extends Migration
     {
       Schema::create('shows', function(Blueprint $table) {
           $table->increments('id');
-          $table->string('name');
-          $table->string('channel');
-          $table->string('genre');
-          $table->string('status');
-          $table->string('notes');
-          $table->string('picture');
-          $table->string('rating');
+          $table->string('name')->default('');
+          $table->string('channel')->default('');
+          $table->string('genre')->default('');
+          $table->string('status')->default('');
+          $table->string('picture')->default('');
+          $table->integer('rating')->default(0);
           $table->boolean('favorite');
           $table->timestamps();
       });
