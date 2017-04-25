@@ -11,8 +11,7 @@
              <span class="icon-bar"></span>
              <span class="icon-bar"></span>
            </button>
-           <i class="fa fa-television" aria-hidden="true"></i>
-           <a class="navbar-brand" href="" id="home">TV Show Tracker</a>
+           <a class="navbar-brand" href="" id="home">Show Tracker</a>
          </div>
 
          <!-- Collect the nav links, forms, and other content for toggling -->

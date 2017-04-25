@@ -96,7 +96,7 @@ export default {
       channel: '',
       genre: '',
       status: '',
-      rating: '',
+      rating: 0,
       picture: '',
       favorite: false,
       loading: false
@@ -145,7 +145,7 @@ export default {
       this.channel = '';
       this.genre = '';
       this.status = '';
-      this.rating = '';
+      this.rating = 0;
       this.picture = '';
       this.favorite = false;
     },
@@ -155,7 +155,7 @@ export default {
       this.channel = '';
       this.genre = '';
       this.status = '';
-      this.rating = '';
+      this.rating = 0;
       this.picture = '';
       this.$emit('cancelled')
     }

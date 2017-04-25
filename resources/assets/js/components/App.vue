@@ -11,10 +11,10 @@
       </p>
       <div class="intro-filter">
         <ul>
-          <li><a href="#" @click.prevent="filter('')">All Shows</a></li>
-          <li><a href="#" @click.prevent="filter('To Watch')">To Watch</a></li>
-          <li><a href="#" @click.prevent="filter('Watching')">Watching</a></li>
-          <li><a href="#" @click.prevnet="filter('Watched')">Watched</a></li>
+          <li><a href="#" @click.prevent="showAll">All Shows</a></li>
+          <li><a href="#" @click.prevent="showToWatch">To Watch</a></li>
+          <li><a href="#" @click.prevent="showWatching">Watching</a></li>
+          <li><a href="#" @click.prevnet="showWatched">Watched</a></li>
         </ul>
       </div>
     </div>
@@ -24,10 +24,38 @@
         <ShowForm @created="fetch" @cancelled="cancelling"></ShowForm>
     </div>
 
-      <!-- @updated & @deleted is from Show.vue, what was emitted for the remove() and save() methods -->
-     <div class="ShowList">
-      <Show v-for="(show, index) in shows" :key="index" :show="show" @updated="update" @deleted="remove(index)" ></Show>
+
+        <div v-if="toWatch == true && watching==true && watched==true">
+          <div class="ShowList">
+           <Show v-for="(show,index) in shows" :key="index" :show="show" @updated="update" @deleted="remove(index)" ></Show>
+         </div>
+        </div>
+
+    <div v-else-if="toWatch == true">
+      <div class="ShowList">
+       <Show v-for="(show,index) in filterBy(shows, 'To Watch', 'status')" :key="index" :show="show" @updated="update" @deleted="remove(index)" ></Show>
+     </div>
     </div>
+
+    <div v-else-if="watching == true">
+      <div class="ShowList">
+       <Show v-for="(show,index) in filterBy(shows, 'Watching', 'status')" :key="index" :show="show" @updated="update" @deleted="remove(index)" ></Show>
+     </div>
+    </div>
+
+    <div v-else-if="watched == true">
+      <div class="ShowList">
+       <Show v-for="(show,index) in filterBy(shows, 'Watched', 'status')" :key="index" :show="show" @updated="update" @deleted="remove(index)" ></Show>
+     </div>
+    </div>
+
+    <div v-else>
+      <div class="ShowList">
+       <Show v-for="(show,index) in shows" :key="index" :show="show" @updated="update" @deleted="remove(index)" ></Show>
+     </div>
+    </div>
+      <!-- @updated & @deleted is from Show.vue, what was emitted for the remove() and save() methods -->
+
 
     <p v-show="shows.length === 0">You do not have any contacts yet. Why don't you add one?</p>
 
@@ -67,12 +95,14 @@ export default {
       shows: [],
       showForm: false,
       loading: false,
+      toWatch: false,
+      watching: false,
+      watched: false
     }
   },
 
   mounted () {
     this.fetch();
-    console.log(shows);
   },
 
   methods: {
@@ -125,8 +155,40 @@ export default {
        this.picture = '';
        this.favorite = false;
        this.showForm = false;
+     },
+
+     showToWatch (){
+       console.log("showToWatch");
+       this.toWatch = true;
+       this.watching = false;
+       this.watch = false;
+       console.log(this.toWatch);
+     },
+
+     showWatching(){
+       console.log("showWatching");
+       this.toWatch = false;
+       this.watching = true;
+       this.watched = false;
+       console.log(this.watching);
+     },
+
+     showWatched (){
+       console.log("showWatched");
+       this.toWatch = false;
+       this.watching = false;
+       this.watched = true;
+       console.log(this.watched);
+     },
+
+     showAll() {
+       console.log("showAll");
+       this.toWatch = true;
+       this.watching = true;
+       this.watched = true;
      }
-  } // end methods
+  }
+
 } // end export defaults
 </script>
 <style lang="scss">

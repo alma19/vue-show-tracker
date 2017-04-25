@@ -18,8 +18,9 @@ import VueRouter from 'vue-router'
 import ShowForm from './components/ShowForm.vue'
 import App from './components/App.vue'
 import StarRating from 'vue-star-rating'
+import Vue2Filters from 'vue2-filters'
 
-
+Vue.use(Vue2Filters)
 
   Vue.component('App', require('./components/App.vue'));
 
