@@ -6,15 +6,16 @@
     <div class="container">
 
     <div class="intro">
-      <p>
-        Intro  test here blah blah blahHere
-      </p>
+      <h3 class="intro-text">
+        Welcome to the Show Tracker!
+      </h3>
       <div class="intro-filter">
         <ul>
-          <li><a href="#" @click.prevent="showAll">All Shows</a></li>
-          <li><a href="#" @click.prevent="showToWatch">To Watch</a></li>
-          <li><a href="#" @click.prevent="showWatching">Watching</a></li>
-          <li><a href="#" @click.prevnet="showWatched">Watched</a></li>
+          <li><a href="#" @click.prevent="showAll"><h4>All Shows</h4></a> </li>
+          <li><a href="#" @click.prevent="showToWatch"><h4>To Watch</h4></a> </li>
+          <li><a href="#" @click.prevent="showWatching"><h4>Watching</h4></a></li>
+          <li><a href="#" @click.prevent="showWatched"><h4>Watched</h4></a> </li>
+          <li><a href="#" @click.prevent="showFavorites"><h4>Favorites</h4></a></li>
         </ul>
       </div>
     </div>
@@ -24,10 +25,16 @@
         <ShowForm @created="fetch" @cancelled="cancelling"></ShowForm>
     </div>
 
-
-        <div v-if="toWatch == true && watching==true && watched==true">
+        <!--allows you to filter shows by watch status -->
+        <div v-if="watching==true && watched==true && toWatch == true">
           <div class="ShowList">
            <Show v-for="(show,index) in shows" :key="index" :show="show" @updated="update" @deleted="remove(index)" ></Show>
+         </div>
+        </div>
+
+        <div v-if="favoriteShow == true">
+          <div class="ShowList">
+           <Show v-for="(show,index) in filterBy (shows, '1', 'favorite')" :key="index" :show="show" @updated="update" @deleted="remove(index)" ></Show>
          </div>
         </div>
 
@@ -97,7 +104,8 @@ export default {
       loading: false,
       toWatch: false,
       watching: false,
-      watched: false
+      watched: false,
+      favoriteShow: false
     }
   },
 
@@ -157,28 +165,29 @@ export default {
        this.showForm = false;
      },
 
+     //filtering shows by status
      showToWatch (){
-       console.log("showToWatch");
        this.toWatch = true;
        this.watching = false;
        this.watch = false;
-       console.log(this.toWatch);
+       this.favoriteShow = false;
+       console.log("showToWatch " + this.toWatch);
      },
 
      showWatching(){
-       console.log("showWatching");
        this.toWatch = false;
        this.watching = true;
        this.watched = false;
-       console.log(this.watching);
+       this.favoriteShow = false;
+       console.log("showWatching " + this.watching);
      },
 
      showWatched (){
-       console.log("showWatched");
        this.toWatch = false;
        this.watching = false;
        this.watched = true;
-       console.log(this.watched);
+       this.favoriteShow = false;
+       console.log("showWatched " + this.watched);
      },
 
      showAll() {
@@ -186,6 +195,15 @@ export default {
        this.toWatch = true;
        this.watching = true;
        this.watched = true;
+       console.log(this.toWatch + this.watching + this.watched + this.favoriteShow);
+     },
+
+     showFavorites(){
+       this.toWatch = false;
+       this.watching = false;
+       this.watched = false;
+       this.favoriteShow = true;
+       console.log("showFavorites " + this.favoriteShow);
      }
   }
 
@@ -200,6 +218,7 @@ nav {
 body {
   background-color: #bca68b;
 }
+
 
 .navigation {
   // i {
@@ -237,7 +256,39 @@ body {
 
 .intro {
   text-align: center;
+  .intro-text {
+    color: white;
+  }
+  .intro-filter {
+    ul {
+      display: flex;
+      justify-content: space-around;
+      font-family: 'Hind', sans-serif;
+      li {
+        list-style-type: none;
+        a {
+          color: #3f4664;
+          font-weight: 700;
+          text-decoration: none;
+        }
+      }
+    }
+
+  }
 }
+
+@media only screen and (max-width: 500px) {
+    .intro {
+      .intro-filter {
+        ul {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+}
+
+
 
 
 </style>

@@ -78,7 +78,7 @@ textarea.form-control {
 }
 
 #box6 {
-  background-color: black; 
+  background-color: black;
 }
 
 /*TYPOGRAPHY */
@@ -168,6 +168,16 @@ h4 {
   background-color: white;
   border-color: black;
   color: $gray;
+}
+
+ .btn-default {
+   color: $blue;
+ }
+
+.btn-default:hover {
+  background-color: $gray;
+  border-color: $gray;
+  color: white;
 }
 
 

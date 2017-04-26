@@ -57,16 +57,16 @@
     </div>
 
 
-<div class="form-group">
+<div class="form-group col-lg-4 col-md-4">
   <label><h4>Favorite</h4></label>
   <input class="form-control" type="checkbox" v-model="favorite" />
 </div>
 
 
 
-  <div class="buttons">
-    <button class="btn btn-default" @click="create" :disabled="loading">Add Show</button>
-    <button class="btn btn-default" @click.prevent="cancelCreate">Cancel</button>
+  <div class="buttons col-lg-12 col-md-12 col-sm-12">
+    <button class="btn btn-sm add" @click="create" :disabled="loading">Add Show</button>
+    <button class="btn btn-default cancel" @click.prevent="cancelCreate">Cancel</button>
     <Loader v-show="loading"></Loader>
   </div>
 
@@ -169,5 +169,7 @@ export default {
 .buttons {
   display: flex;
 }
+
+
 
 </style>

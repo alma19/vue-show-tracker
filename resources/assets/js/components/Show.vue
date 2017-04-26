@@ -4,7 +4,7 @@
 
       <div class="live" v-show="!editing">
 
-        <div v-show="showing">
+        <div>
           <div class="container">
             <img :src="show.picture" class="pic"/>
             <div class="show-text">
@@ -16,11 +16,11 @@
               </div>
               <div class="show-icons">
 
-               <a class="tool" href="#" @click.prevent="editing = true" v-show="!editing"s>
+               <a class="tool edit" href="#" @click.prevent="editing = true" v-show="!editing" >
                  <i class="fa fa-pencil" aria-hidden="true"></i>
                </a>
 
-               <a class="tool" href="#" @click.prevent="remove">
+               <a class="tool delete" href="#" @click.prevent="remove">
                 <i class="fa fa-trash" aria-hidden="true"></i>
               </a>
               </div>
@@ -80,7 +80,7 @@
 
 
         <p>
-          <button class="btn btn-default" @click="save">Save</button>
+          <button class="btn btn-default save" @click="save">Save</button>
           <button class="btn btn-default" @click="cancel">Cancel</button>
         </p>
 
@@ -114,9 +114,9 @@ export default {
       rating: this.show.rating,
       picture: this.show.picture,
       favorite: this.show.favorite,
-      showing: true,
       editing: false,
-      loading: false
+      loading: false,
+      Show2: false
     }
   },
 
@@ -184,6 +184,10 @@ export default {
       this.picture = this.show.picture;
       this.favorite = this.show.favorite;
       this.editing = false;
+    },
+
+    editingShow (){
+      console.log("editingShow");
     }
   }
 
@@ -194,10 +198,15 @@ export default {
 </script>
 
 <style lang="scss">
+.Show2 {
+  height: 750px;
+}
+
 
 .Show {
   width: 300px;
-  height: 700px;
+  height: 650px;
+  margin-bottom: 5px;
 
   img {
    width: 300px;
@@ -209,6 +218,7 @@ export default {
     color: #fff;
     background-color: #7e6e81;
     width: 300px;
+    height: 150px;
     text-align: center;
     margin-top: 3%;
     padding: 10px;
@@ -229,6 +239,26 @@ export default {
   .stars {
     display: flex;
     justify-content: center;
+  }
+
+  .edit {
+    float: left;
+  }
+
+  .delete {
+    float: right;
+  }
+
+  .save {
+    background-color: #3f4664;
+    border-color: #3f4664;
+    color: #fff;
+  }
+
+  .save:hover, .save:active {
+    background-color: #7e7e85;
+    border-color: #7e7e85;
+    color: white;
   }
 }
 
