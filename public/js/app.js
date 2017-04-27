@@ -22233,6 +22233,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -43796,7 +43797,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "created": _vm.fetch,
       "cancelled": _vm.cancelling
     }
-  })], 1), _vm._v(" "), (_vm.watching == true && _vm.watched == true && _vm.toWatch == true) ? _c('div', {
+  })], 1), _vm._v(" "), (_vm.toWatch == true && _vm.watching == true && _vm.watched == true) ? _c('div', {
     directives: [{
       name: "show",
       rawName: "v-show",
@@ -43818,7 +43819,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     })
-  }))]) : _vm._e(), _vm._v(" "), (_vm.favoriteShow == true) ? _c('div', {
+  }))]) : (_vm.favoriteShow == true) ? _c('div', {
     directives: [{
       name: "show",
       rawName: "v-show",

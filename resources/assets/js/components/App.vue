@@ -31,15 +31,16 @@
     </div>
 
         <!--allows you to filter shows by watch status / will disappear if you make a new show-->
-        <div v-show="filtering" v-if="watching==true && watched==true && toWatch == true" >
-          <div class="ShowList">
-           <Show v-for="(show,index) in shows" :key="show.id" :show="show" @updated="update" @deleted="remove(index)" ></Show>
-         </div>
-        </div>
 
-        <div v-show="filtering" v-if="favoriteShow == true">
+      <div v-show="filtering" v-if="toWatch == true && watching==true && watched==true" >
+        <div class="ShowList">
+         <Show v-for="(show,index) in shows" :key="show.id" :show="show" @updated="update" @deleted="remove(index)" ></Show>
+       </div>
+      </div>
+
+        <div v-show="filtering" v-else-if="favoriteShow == true">
           <div class="ShowList">
-           <Show v-for="(show,index) in filterBy (shows, '1', 'favorite')" :key="show.id" :show="show" @updated="update" @deleted="remove(index)" ></Show>
+           <Show v-for="(show, index) in filterBy (shows, '1', 'favorite')" :key="show.id" :show="show" @updated="update" @deleted="remove(index)" ></Show>
          </div>
         </div>
 
