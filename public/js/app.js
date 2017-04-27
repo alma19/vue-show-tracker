@@ -22228,6 +22228,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -22359,6 +22361,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.toWatch = true;
       this.watching = true;
       this.watched = true;
+      this.favoriteShow = false;
       console.log(this.toWatch + this.watching + this.watched + this.favoriteShow);
     },
     showFavorites: function showFavorites() {
@@ -22513,6 +22516,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_star_rating__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_star_rating___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_star_rating__);
+//
 //
 //
 //
@@ -25398,7 +25402,7 @@ exports.push([module.i, "\n.star[data-v-248fe0b8] {\r\n    display: inline-block
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)();
-exports.push([module.i, "\n.Show2 {\n  height: 750px;\n}\n.Show {\n  width: 300px;\n  height: 650px;\n  margin-bottom: 5px;\n}\n.Show img {\n    width: 300px;\n    height: 450px;\n    margin-top: 2%;\n}\n.Show .show-text {\n    color: #fff;\n    background-color: #7e6e81;\n    width: 300px;\n    height: 155px;\n    text-align: center;\n    margin-top: 3%;\n    padding: 10px;\n}\n.Show .show-icons {\n    font-size: 1.5em;\n}\n.Show i {\n    color: black;\n}\n.Show .show-name {\n    color: white;\n}\n.Show .stars {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n}\n.Show .edit {\n    float: left;\n}\n.Show .delete {\n    float: right;\n}\n.Show .save {\n    background-color: #3f4664;\n    border-color: #3f4664;\n    color: #fff;\n}\n.Show .save:hover, .Show .save:active {\n    background-color: #7e7e85;\n    border-color: #7e7e85;\n    color: white;\n}\n.Show .buttons {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n}\n", ""]);
+exports.push([module.i, "\n.Show {\n  width: 300px;\n  height: 650px;\n  margin-bottom: 5px;\n}\n.Show img {\n    width: 300px;\n    height: 450px;\n    margin-top: 2%;\n}\n.Show .show-text {\n    color: #fff;\n    background-color: #7e6e81;\n    width: 300px;\n    height: 155px;\n    text-align: center;\n    margin-top: 3%;\n    padding: 10px;\n}\n.Show .show-icons {\n    font-size: 1.5em;\n}\n.Show i {\n    color: black;\n}\n.Show .show-name {\n    color: white;\n}\n.Show .stars {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n}\n.Show .edit {\n    float: left;\n}\n.Show .delete {\n    float: right;\n}\n.Show .save {\n    background-color: #3f4664;\n    border-color: #3f4664;\n    color: #fff;\n}\n.Show .save:hover, .Show .save:active {\n    background-color: #7e7e85;\n    border-color: #7e7e85;\n    color: white;\n}\n.Show .buttons {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n}\n.Show2 {\n  height: 850px;\n}\n", ""]);
 
 /***/ }),
 /* 51 */,
@@ -42933,7 +42937,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "show-text"
   }, [_c('h4', {
     staticClass: "show-name"
-  }, [_vm._v(_vm._s(_vm.show.name))]), _vm._v(" "), _c('p', [_vm._v("\n               " + _vm._s(_vm.show.status) + "\n               "), (_vm.season) ? _c('span', [_vm._v("\n                  | Season: " + _vm._s(_vm.show.season) + ", Episode: " + _vm._s(_vm.show.episode) + "\n               ")]) : _vm._e()]), _vm._v(" "), _c('div', {
+  }, [_vm._v(_vm._s(_vm.show.name))]), _vm._v(" "), _c('p', [_vm._v("\n               " + _vm._s(_vm.show.status) + "\n               "), (_vm.season && _vm.episode) ? _c('span', [_vm._v("\n                  | Season: " + _vm._s(_vm.show.season) + ", Episode: " + _vm._s(_vm.show.episode) + "\n               ")]) : _vm._e()]), _vm._v(" "), _c('div', {
     staticClass: "stars"
   }, [_c('star-rating', {
     attrs: {
@@ -42988,8 +42992,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       rawName: "v-show",
       value: (_vm.editing),
       expression: "editing"
-    }],
-    staticClass: "editing"
+    }]
   }, [_c('h3', [_vm._v("Edit Show")]), _vm._v(" "), _c('div', {
     staticClass: "form-group col-lg-12 col-md-12"
   }, [_vm._m(0), _vm._v(" "), _c('input', {
@@ -43779,7 +43782,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "created": _vm.fetch,
       "cancelled": _vm.cancelling
     }
-  })], 1), _vm._v(" "), (_vm.watching == true && _vm.watched == true && _vm.toWatch == true) ? _c('div', [_c('div', {
+  })], 1), _vm._v(" "), (_vm.watching == true && _vm.watched == true && _vm.toWatch == true) ? _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.filtering),
+      expression: "filtering"
+    }]
+  }, [_c('div', {
     staticClass: "ShowList"
   }, _vm._l((_vm.shows), function(show, index) {
     return _c('Show', {
@@ -43794,7 +43804,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     })
-  }))]) : _vm._e(), _vm._v(" "), (_vm.favoriteShow == true) ? _c('div', [_c('div', {
+  }))]) : _vm._e(), _vm._v(" "), (_vm.favoriteShow == true) ? _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.filtering),
+      expression: "filtering"
+    }]
+  }, [_c('div', {
     staticClass: "ShowList"
   }, _vm._l((_vm.filterBy(_vm.shows, '1', 'favorite')), function(show, index) {
     return _c('Show', {
@@ -43809,7 +43826,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     })
-  }))]) : (_vm.toWatch == true) ? _c('div', [_c('div', {
+  }))]) : (_vm.toWatch == true) ? _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.filtering),
+      expression: "filtering"
+    }]
+  }, [_c('div', {
     staticClass: "ShowList"
   }, _vm._l((_vm.filterBy(_vm.shows, 'To Watch', 'status')), function(show, index) {
     return _c('Show', {
@@ -43824,7 +43848,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     })
-  }))]) : (_vm.watching == true) ? _c('div', [_c('div', {
+  }))]) : (_vm.watching == true) ? _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.filtering),
+      expression: "filtering"
+    }]
+  }, [_c('div', {
     staticClass: "ShowList"
   }, _vm._l((_vm.filterBy(_vm.shows, 'Watching', 'status')), function(show, index) {
     return _c('Show', {
@@ -43839,7 +43870,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     })
-  }))]) : (_vm.watched == true) ? _c('div', [_c('div', {
+  }))]) : (_vm.watched == true) ? _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.filtering),
+      expression: "filtering"
+    }]
+  }, [_c('div', {
     staticClass: "ShowList"
   }, _vm._l((_vm.filterBy(_vm.shows, 'Watched', 'status')), function(show, index) {
     return _c('Show', {
@@ -43854,7 +43892,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     })
-  }))]) : _c('div', [_c('div', {
+  }))]) : _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.filtering),
+      expression: "filtering"
+    }]
+  }, [_c('div', {
     staticClass: "ShowList"
   }, _vm._l((_vm.shows), function(show, index) {
     return _c('Show', {
@@ -43876,7 +43921,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       value: (_vm.shows.length === 0),
       expression: "shows.length === 0"
     }]
-  }, [_vm._v("You do not have any contacts yet. Why don't you add one?")]), _vm._v(" "), _c('transition', {
+  }, [_vm._v("You do not have any shows yet. Why don't you add one?")]), _vm._v(" "), _c('transition', {
     attrs: {
       "name": "fade"
     }

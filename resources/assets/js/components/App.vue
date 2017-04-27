@@ -9,6 +9,8 @@
       <h3 class="intro-text">
         Welcome to the Show Tracker!
       </h3>
+
+      <!--v show toggles on / off when you make a new show -->
       <div class="intro-filter" v-show="filtering">
         <ul>
           <li><a href="#" @click.prevent="showAll"><h4>All Shows</h4></a> </li>
@@ -25,46 +27,46 @@
         <ShowForm @created="fetch" @cancelled="cancelling"></ShowForm>
     </div>
 
-        <!--allows you to filter shows by watch status -->
-        <div v-if="watching==true && watched==true && toWatch == true">
+        <!--allows you to filter shows by watch status / will disappear if you make a new show-->
+        <div v-show="filtering" v-if="watching==true && watched==true && toWatch == true" >
           <div class="ShowList">
            <Show v-for="(show,index) in shows" :key="index" :show="show" @updated="update" @deleted="remove(index)" ></Show>
          </div>
         </div>
 
-        <div v-if="favoriteShow == true">
+        <div v-show="filtering" v-if="favoriteShow == true">
           <div class="ShowList">
            <Show v-for="(show,index) in filterBy (shows, '1', 'favorite')" :key="index" :show="show" @updated="update" @deleted="remove(index)" ></Show>
          </div>
         </div>
 
-    <div v-else-if="toWatch == true">
+    <div v-show="filtering" v-else-if="toWatch == true">
       <div class="ShowList">
        <Show v-for="(show,index) in filterBy(shows, 'To Watch', 'status')" :key="index" :show="show" @updated="update" @deleted="remove(index)" ></Show>
      </div>
     </div>
 
-    <div v-else-if="watching == true">
+    <div v-show="filtering" v-else-if="watching == true">
       <div class="ShowList">
-       <Show v-for="(show,index) in filterBy(shows, 'Watching', 'status')" :key="index" :show="show" @updated="update" @deleted="remove(index)" ></Show>
+       <Show v-for="(show, index) in filterBy(shows, 'Watching', 'status')" :key="index" :show="show" @updated="update" @deleted="remove(index)" ></Show>
      </div>
     </div>
 
-    <div v-else-if="watched == true">
+    <div  v-show="filtering" v-else-if="watched == true">
       <div class="ShowList">
-       <Show v-for="(show,index) in filterBy(shows, 'Watched', 'status')" :key="index" :show="show" @updated="update" @deleted="remove(index)" ></Show>
+       <Show v-for="(show, index) in filterBy(shows, 'Watched', 'status')" :key="index" :show="show" @updated="update" @deleted="remove(index)" ></Show>
      </div>
     </div>
 
-    <div v-else>
+    <div v-show="filtering" v-else>
       <div class="ShowList">
-       <Show v-for="(show,index) in shows" :key="index" :show="show" @updated="update" @deleted="remove(index)" ></Show>
+       <Show v-for="(show, index) in shows" :key="index" :show="show" @updated="update" @deleted="remove(index)" ></Show>
      </div>
     </div>
       <!-- @updated & @deleted is from Show.vue, what was emitted for the remove() and save() methods -->
 
 
-    <p v-show="shows.length === 0">You do not have any contacts yet. Why don't you add one?</p>
+    <p v-show="shows.length === 0">You do not have any shows yet. Why don't you add one?</p>
 
     <transition name="fade">
       <MainLoader v-if="loading"></MainLoader>
@@ -207,14 +209,15 @@ export default {
        this.toWatch = true;
        this.watching = true;
        this.watched = true;
+       this.favoriteShow=false;
        console.log(this.toWatch + this.watching + this.watched + this.favoriteShow);
      },
 
      showFavorites(){
-       this.toWatch = false;
-       this.watching = false;
-       this.watched = false;
-       this.favoriteShow = true;
+      this.toWatch = false;
+      this.watching = false;
+      this.watched = false;
+      this.favoriteShow = true;
        console.log("showFavorites " + this.favoriteShow);
      }
   }

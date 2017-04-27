@@ -18,9 +18,9 @@ class CreateShowsTable extends Migration
           $table->string('name')->default('')->nullable();
           $table->string('channel')->default('')->nullable();
           $table->string('genre')->default('')->nullable();
-          $table->string('status')->default('');
+          $table->string('status')->default('')->nullable();
           $table->string('season')->default('')->nullable();;
-          $table->string('episode')->default('')->nullable();; 
+          $table->string('episode')->default('')->nullable();;
           $table->string('picture')->default('')->nullable();
           $table->integer('rating')->default(0);
           $table->boolean('favorite');

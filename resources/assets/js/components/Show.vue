@@ -1,4 +1,5 @@
 <template>
+  <!--if editing = true, use .Show2 to change the height!-->
   <div :class="{Show2: editing}" class="Show col-lg-4 col-md-4">
 
 
@@ -11,7 +12,7 @@
               <h4 class="show-name">{{ show.name }}</h4>
               <p>
                  {{show.status}}
-                 <span v-if="season">
+                 <span v-if="season && episode">
                     | Season: {{ show.season }}, Episode: {{ show.episode }}
                  </span>
 
@@ -40,7 +41,7 @@
       </div> <!-- show -->
 
 
-      <div class="editing" v-show="editing">
+      <div v-show="editing">
 
         <h3>Edit Show</h3>
         <div class="form-group col-lg-12 col-md-12">
@@ -224,10 +225,6 @@ export default {
 </script>
 
 <style lang="scss">
-.Show2 {
-  height: 750px;
-}
-
 
 .Show {
   width: 300px;
@@ -293,6 +290,9 @@ export default {
   }
 }
 
+.Show2 {
+  height: 850px;
+}
 
 
 
