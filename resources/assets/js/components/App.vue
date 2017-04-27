@@ -161,12 +161,9 @@ export default {
     }, // end update
 
     //deleting a show
-     remove (show) {
-       let currentShow = show;
-       let currentIndex = this.shows.indexOf(currentShow);
-       this.shows.splice(currentIndex, 1);
-      //  console.log(`App -> remove ID: ${i}`);
-      //  this.shows.splice(i, 1);
+     remove (i) {
+      console.log(`App -> remove ID: ${i}`);
+      this.shows.splice(i, 1);
      },
 
      //cancelling a show from ShowForm

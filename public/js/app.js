@@ -22314,12 +22314,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     // end update
 
     //deleting a show
-    remove: function remove(show) {
-      var currentShow = show;
-      var currentIndex = this.shows.indexOf(currentShow);
-      this.shows.splice(currentIndex, 1);
-      //  console.log(`App -> remove ID: ${i}`);
-      //  this.shows.splice(i, 1);
+    remove: function remove(i) {
+      console.log('App -> remove ID: ' + i);
+      this.shows.splice(i, 1);
     },
 
 
