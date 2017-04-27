@@ -22313,9 +22313,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     // end update
 
     //deleting a show
-    remove: function remove(i) {
-      console.log('App -> remove ID: ' + i);
-      this.shows.splice(i, 1);
+    remove: function remove(show) {
+      var currentShow = show;
+      var currentIndex = this.shows.indexOf(currentShow);
+      this.shows.splice(currentIndex, 1);
+      //  console.log(`App -> remove ID: ${i}`);
+      //  this.shows.splice(i, 1);
     },
 
 
@@ -22670,10 +22673,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.loading = true;
       __WEBPACK_IMPORTED_MODULE_0_axios___default.a.delete('/shows/' + this.show.id).then(function (response) {
         console.log('Show -> remove success');
-        _this.$emit('deleted');
+        _this.$emit('deleted', _this.show);
         _this.loading = false;
       }).catch(function (error) {
         console.log('Show -> remove error');
+        alert("Error. Show has not been deleted.");
         // stop deleting and dont remove from the dom
         // tell the user deletion failed
       });
@@ -22715,6 +22719,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         _this2.editing = false;
       }).catch(function (error) {
         console.log('Show -> save error');
+        alert("Error. Show not updated.");
         //show the user that it couldn't be updated
       });
     },
@@ -22734,9 +22739,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.episode = this.show.episode;
       this.favorite = this.show.favorite;
       this.editing = false;
-    },
-    editingShow: function editingShow() {
-      console.log("editingShow");
     }
   }
 
@@ -22919,6 +22921,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         _this.$emit('created');
       }).catch(function (error) {
         console.log('ShowForm -> sendRequest error');
+        alert("Error. Show has not been created");
         // show an error message
       });
     },
@@ -43589,7 +43592,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   })]), _vm._v(" "), _c('a', {
     staticClass: "navbar-brand",
     attrs: {
-      "href": "#",
+      "href": "",
       "id": "home"
     }
   }, [_vm._v("Show Tracker")])])
@@ -43804,7 +43807,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "ShowList"
   }, _vm._l((_vm.shows), function(show, index) {
     return _c('Show', {
-      key: index,
+      key: show.id,
       attrs: {
         "show": show
       },
@@ -43826,7 +43829,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "ShowList"
   }, _vm._l((_vm.filterBy(_vm.shows, '1', 'favorite')), function(show, index) {
     return _c('Show', {
-      key: index,
+      key: show.id,
       attrs: {
         "show": show
       },
@@ -43848,7 +43851,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "ShowList"
   }, _vm._l((_vm.filterBy(_vm.shows, 'To Watch', 'status')), function(show, index) {
     return _c('Show', {
-      key: index,
+      key: show.id,
       attrs: {
         "show": show
       },
@@ -43870,7 +43873,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "ShowList"
   }, _vm._l((_vm.filterBy(_vm.shows, 'Watching', 'status')), function(show, index) {
     return _c('Show', {
-      key: index,
+      key: show.id,
       attrs: {
         "show": show
       },
@@ -43892,7 +43895,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "ShowList"
   }, _vm._l((_vm.filterBy(_vm.shows, 'Watched', 'status')), function(show, index) {
     return _c('Show', {
-      key: index,
+      key: show.id,
       attrs: {
         "show": show
       },
@@ -43914,7 +43917,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "ShowList"
   }, _vm._l((_vm.shows), function(show, index) {
     return _c('Show', {
-      key: index,
+      key: show.id,
       attrs: {
         "show": show
       },

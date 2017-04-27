@@ -149,11 +149,12 @@ export default {
       axios.delete(`/shows/${this.show.id}`)
         .then((response) => {
           console.log('Show -> remove success');
-          this.$emit('deleted')
+          this.$emit('deleted', this.show);
           this.loading = false;
         })
         .catch((error) =>{
           console.log('Show -> remove error');
+          alert("Error. Show has not been deleted.");
           // stop deleting and dont remove from the dom
           // tell the user deletion failed
         });
@@ -193,6 +194,7 @@ export default {
       })
       .catch((error) => {
         console.log('Show -> save error');
+        alert("Error. Show not updated."); 
         //show the user that it couldn't be updated
       });
     }, // end save
@@ -211,10 +213,6 @@ export default {
       this.episode = this.show.episode;
       this.favorite = this.show.favorite;
       this.editing = false;
-    },
-
-    editingShow (){
-      console.log("editingShow");
     }
   }
 

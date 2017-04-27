@@ -33,37 +33,37 @@
         <!--allows you to filter shows by watch status / will disappear if you make a new show-->
         <div v-show="filtering" v-if="watching==true && watched==true && toWatch == true" >
           <div class="ShowList">
-           <Show v-for="(show,index) in shows" :key="index" :show="show" @updated="update" @deleted="remove(index)" ></Show>
+           <Show v-for="(show,index) in shows" :key="show.id" :show="show" @updated="update" @deleted="remove(index)" ></Show>
          </div>
         </div>
 
         <div v-show="filtering" v-if="favoriteShow == true">
           <div class="ShowList">
-           <Show v-for="(show,index) in filterBy (shows, '1', 'favorite')" :key="index" :show="show" @updated="update" @deleted="remove(index)" ></Show>
+           <Show v-for="(show,index) in filterBy (shows, '1', 'favorite')" :key="show.id" :show="show" @updated="update" @deleted="remove(index)" ></Show>
          </div>
         </div>
 
     <div v-show="filtering" v-else-if="toWatch == true">
       <div class="ShowList">
-       <Show v-for="(show,index) in filterBy(shows, 'To Watch', 'status')" :key="index" :show="show" @updated="update" @deleted="remove(index)" ></Show>
+       <Show v-for="(show,index) in filterBy(shows, 'To Watch', 'status')" :key="show.id" :show="show" @updated="update" @deleted="remove(index)" ></Show>
      </div>
     </div>
 
     <div v-show="filtering" v-else-if="watching == true">
       <div class="ShowList">
-       <Show v-for="(show, index) in filterBy(shows, 'Watching', 'status')" :key="index" :show="show" @updated="update" @deleted="remove(index)" ></Show>
+       <Show v-for="(show, index) in filterBy(shows, 'Watching', 'status')" :key="show.id" :show="show" @updated="update" @deleted="remove(index)" ></Show>
      </div>
     </div>
 
     <div  v-show="filtering" v-else-if="watched == true">
       <div class="ShowList">
-       <Show v-for="(show, index) in filterBy(shows, 'Watched', 'status')" :key="index" :show="show" @updated="update" @deleted="remove(index)" ></Show>
+       <Show v-for="(show, index) in filterBy(shows, 'Watched', 'status')" :key="show.id" :show="show" @updated="update" @deleted="remove(index)" ></Show>
      </div>
     </div>
 
     <div v-show="filtering" v-else>
       <div class="ShowList">
-       <Show v-for="(show, index) in shows" :key="index" :show="show" @updated="update" @deleted="remove(index)" ></Show>
+       <Show v-for="(show, index) in shows" :key="show.id" :show="show" @updated="update" @deleted="remove(index)" ></Show>
      </div>
     </div>
       <!-- @updated & @deleted is from Show.vue, what was emitted for the remove() and save() methods -->
@@ -160,9 +160,12 @@ export default {
     }, // end update
 
     //deleting a show
-     remove (i) {
-       console.log(`App -> remove ID: ${i}`);
-       this.shows.splice(i, 1);
+     remove (show) {
+       let currentShow = show;
+       let currentIndex = this.shows.indexOf(currentShow);
+       this.shows.splice(currentIndex, 1);
+      //  console.log(`App -> remove ID: ${i}`);
+      //  this.shows.splice(i, 1);
      },
 
      //cancelling a show from ShowForm
@@ -243,7 +246,7 @@ body {
     color: white;
   }
   .intro-text {
-    margin: 15px 0 20px 0; 
+    margin: 15px 0 20px 0;
   }
   .intro-filter {
     ul {

@@ -142,6 +142,7 @@ export default {
       })
       .catch((error) => {
         console.log('ShowForm -> sendRequest error');
+        alert("Error. Show has not been created"); 
         // show an error message
       });
     },
