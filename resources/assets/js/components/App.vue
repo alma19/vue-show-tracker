@@ -6,9 +6,12 @@
     <div class="container">
 
     <div class="intro">
-      <h3 class="intro-text">
+      <h3 class="intro-title">
         Welcome to the Show Tracker!
       </h3>
+      <div class="intro-text">
+        Show Tracker was created as a way to help you keep track of TV shows you want to watch, are currently watching, or have already watched. Click on 'New Show' to get started!
+      </div>
 
       <!--v show toggles on / off when you make a new show -->
       <div class="intro-filter" v-show="filtering">
@@ -236,8 +239,11 @@ body {
 
 .intro {
   text-align: center;
-  .intro-text {
+  .intro-title {
     color: white;
+  }
+  .intro-text {
+    margin: 15px 0 20px 0; 
   }
   .intro-filter {
     ul {

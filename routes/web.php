@@ -11,16 +11,14 @@
 |
 */
 
+//get homepage
 Route::get('/', function () {
     return view('app');
 });
 
+//get styleguide
 Route::get('/styleguide', function () {
     return view('styleguide');
-});
-
-Route::get('/new', function () {
-    return view('new');
 });
 
 //api routes

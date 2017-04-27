@@ -1039,7 +1039,7 @@ module.exports = defaults;
 
 
 /* styles */
-__webpack_require__(93)
+__webpack_require__(76)
 
 var Component = __webpack_require__(1)(
   /* script */
@@ -22230,6 +22230,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
@@ -25405,7 +25408,13 @@ exports = module.exports = __webpack_require__(2)();
 exports.push([module.i, "\n.Show {\n  width: 300px;\n  height: 650px;\n  margin-bottom: 5px;\n}\n.Show img {\n    width: 300px;\n    height: 450px;\n    margin-top: 2%;\n}\n.Show .show-text {\n    color: #fff;\n    background-color: #7e6e81;\n    width: 300px;\n    height: 155px;\n    text-align: center;\n    margin-top: 3%;\n    padding: 10px;\n}\n.Show .show-icons {\n    font-size: 1.5em;\n}\n.Show i {\n    color: black;\n}\n.Show .show-name {\n    color: white;\n}\n.Show .stars {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n}\n.Show .edit {\n    float: left;\n}\n.Show .delete {\n    float: right;\n}\n.Show .save {\n    background-color: #3f4664;\n    border-color: #3f4664;\n    color: #fff;\n}\n.Show .save:hover, .Show .save:active {\n    background-color: #7e7e85;\n    border-color: #7e7e85;\n    color: white;\n}\n.Show .buttons {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n}\n.Show2 {\n  height: 850px;\n}\n", ""]);
 
 /***/ }),
-/* 51 */,
+/* 51 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)();
+exports.push([module.i, "\n.buttons[data-v-4d501ad0] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: justify;\r\n      -ms-flex-pack: justify;\r\n          justify-content: space-between;\n}\r\n\r\n\r\n\r\n\r\n", ""]);
+
+/***/ }),
 /* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -25431,7 +25440,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)();
-exports.push([module.i, "\nbody {\n  background-color: #bca68b;\n}\na {\n  pointer: cursor;\n}\n.intro {\n  text-align: center;\n}\n.intro .intro-text {\n    color: white;\n}\n.intro .intro-filter ul {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-pack: distribute;\n        justify-content: space-around;\n    font-family: 'Hind', sans-serif;\n}\n.intro .intro-filter ul li {\n      list-style-type: none;\n}\n.intro .intro-filter ul li a {\n        color: #3f4664;\n        font-weight: 700;\n        text-decoration: none;\n}\n@media only screen and (max-width: 500px) {\n.intro .intro-filter ul {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n}\n}\n", ""]);
+exports.push([module.i, "\nbody {\n  background-color: #bca68b;\n}\na {\n  pointer: cursor;\n}\n.intro {\n  text-align: center;\n}\n.intro .intro-title {\n    color: white;\n}\n.intro .intro-text {\n    margin: 15px 0 20px 0;\n}\n.intro .intro-filter ul {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-pack: distribute;\n        justify-content: space-around;\n    font-family: 'Hind', sans-serif;\n}\n.intro .intro-filter ul li {\n      list-style-type: none;\n}\n.intro .intro-filter ul li a {\n        color: #3f4664;\n        font-weight: 700;\n        text-decoration: none;\n}\n@media only screen and (max-width: 500px) {\n.intro .intro-filter ul {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n}\n}\n", ""]);
 
 /***/ }),
 /* 56 */
@@ -42776,12 +42785,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('path', {
     attrs: {
       "opacity": "0.2",
-      "fill": "#000",
+      "fill": "#7e6e81",
       "d": "M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946\r\n    s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634\r\n    c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"
     }
   }), _vm._v(" "), _c('path', {
     attrs: {
-      "fill": "#000",
+      "fill": "#7e6e81",
       "d": "M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0\r\n    C22.32,8.481,24.301,9.057,26.013,10.047z"
     }
   }, [_c('animateTransform', {
@@ -43669,12 +43678,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('path', {
     attrs: {
       "opacity": "0.2",
-      "fill": "#000",
+      "fill": "#7e6e81",
       "d": "M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946\r\n    s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634\r\n    c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"
     }
   }), _vm._v(" "), _c('path', {
     attrs: {
-      "fill": "#000",
+      "fill": "#7e6e81",
       "d": "M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0\r\n    C22.32,8.481,24.301,9.057,26.013,10.047z"
     }
   }, [_c('animateTransform', {
@@ -43711,8 +43720,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "intro"
   }, [_c('h3', {
-    staticClass: "intro-text"
+    staticClass: "intro-title"
   }, [_vm._v("\n      Welcome to the Show Tracker!\n    ")]), _vm._v(" "), _c('div', {
+    staticClass: "intro-text"
+  }, [_vm._v("\n      Show Tracker was created as a way to help you keep track of TV shows you want to watch, are currently watching, or have already watched. Click on 'New Show' to get started!\n    ")]), _vm._v(" "), _c('div', {
     directives: [{
       name: "show",
       rawName: "v-show",
@@ -46424,7 +46435,32 @@ if(false) {
 }
 
 /***/ }),
-/* 76 */,
+/* 76 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(51);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("6af745b8", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-4d501ad0&scoped=true!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShowForm.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-4d501ad0&scoped=true!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShowForm.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
 /* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -47212,46 +47248,6 @@ module.exports = function(module) {
 __webpack_require__(18);
 module.exports = __webpack_require__(19);
 
-
-/***/ }),
-/* 85 */,
-/* 86 */,
-/* 87 */,
-/* 88 */,
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)();
-exports.push([module.i, "\n.buttons[data-v-4d501ad0] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: justify;\r\n      -ms-flex-pack: justify;\r\n          justify-content: space-between;\n}\r\n\r\n\r\n\r\n\r\n", ""]);
-
-/***/ }),
-/* 93 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(92);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(3)("6af745b8", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-4d501ad0&scoped=true!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShowForm.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-4d501ad0&scoped=true!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShowForm.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
 
 /***/ })
 /******/ ]);

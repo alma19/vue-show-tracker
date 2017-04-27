@@ -1,40 +1,22 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# Show Tracker
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+You know when you have a thousand TV shows you want to watch but when you actually sit down to watch something, you can't think of anything you'd possibly want to see? You know when you take a break from watching a show and come back to it, and can't remember where you left off? You know when you want to watch an old favorite show for nostalgia's sake, but your mind is blank? If you have those problems, look no further! Show Tracker was created as a way for you to keep track of TV shows you want to watch, are watching, or have already watched. Think of it as Goodreads, but for TV shows. Goodshows, if you will.
 
-## About Laravel
+Show Tracker was built using Laravel and Vue.js. It implements REST principles, which allows you to create, read, update, and delete items in your database via AJAX. The four HTTP methods used are: GET, POST, PUT, and DELETE.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+[My portfolio.](http://almawashington.com)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Installation
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
+1. Clone this repository.
+2. Download the MAMP application: https://www.mamp.info/en/downloads/
+3. Download composer: https://getcomposer.org/download/
+4. Open the MAMP application. Go to 'Preferences'> 'Web Server', and the select the 'public' folder of the repository.
+5. In 'Ports' make sure the Apache Port is set to '8888'. Nginx Port should be set to '8888'. MySQL Port should be set to '8889'
+6. Create a database named 'app'
+7. Open up your terminal, cd into the project directory, and then run 'php artisan:migrate' to create database migrations for this application.
+8. While in your project directory, run 'npm run watch' or 'npm run hot' to load up the project.
+9. In your preferred browser, open up 'localhost:8888.'
 
-## Learning Laravel
-
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
-
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+## API Documentation
+https://alma19.gitbooks.io/show-tracker-api/content/
