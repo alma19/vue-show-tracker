@@ -116,12 +116,14 @@ export default {
   },
 
   methods: {
+    // opens up ShowForm / takes away filtering options when making a new show
     createForm() {
       this.showForm = true;
       console.log('createForm');
       this.filtering = false;
     },
 
+    // retrieving shows from database / displaying them on page
     fetch (){
       console.log('App->fetch');
       this.loading = true;
@@ -132,7 +134,7 @@ export default {
           console.log(response.data);
           this.shows = response.data;
           this.loading = false;
-          this.filtering = true; 
+          this.filtering = true;
         })
         .catch((response) => {
           console.log('App -> fetch error');
@@ -141,6 +143,7 @@ export default {
         })
     }, // end fetch
 
+    //updating a show
     update (data) {
       console.log(data);
       var i = this.shows.indexOf(data.show);
@@ -151,11 +154,13 @@ export default {
       }
     }, // end update
 
+    //deleting a show
      remove (i) {
        console.log(`App -> remove ID: ${i}`);
        this.shows.splice(i, 1);
      },
 
+     //cancelling a show from ShowForm
      cancelling () {
        console.log('cancelCreate');
        this.name = '';
@@ -165,6 +170,8 @@ export default {
        this.notes = '';
        this.rating = '';
        this.picture = '';
+       this.season = '';
+       this.episode = '';
        this.favorite = false;
        this.showForm = false;
        this.filtering = true;
@@ -215,49 +222,14 @@ export default {
 } // end export defaults
 </script>
 <style lang="scss">
-
-nav {
-  font-family: 'Raleway', sans-serif;
-}
-
 body {
   background-color: #bca68b;
 }
-
-
-.navigation {
-  // i {
-  //   font-size: 2em;
-  //   position: relative;
-  //   top: 11px;
-  //   float: left;
-  // }
 
   a {
     pointer: cursor;
   }
 
-  #home {
-    margin-left: 0%;
-  }
-
-  .navbar-default {
-    background-color: #7e6e81;
-    border-color: #7e6e81;
-  }
-
-  .navbar-default .navbar-nav > li > a {
-    color: black;
-  }
-
-  .navbar-default .navbar-brand {
-    color: black;
-  }
-
-  .navbar-default .navbar-toggle:hover .navbar-default .navbar-toggle:focus {
-    background-color: #7e6e81;
-  }
-}
 
 .intro {
   text-align: center;

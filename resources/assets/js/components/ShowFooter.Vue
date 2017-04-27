@@ -2,10 +2,11 @@
   <div class="ShowFooter">
     <a href="http://almawashington.com" target="_blank">Portfolio</a> |
        <a href="https://github.com/alma19" target="_blank">Github</a> |
-       <a href="/">Credits</a> |
        <a href="/styleguide">Styleguide</a> |
-       <a href="https://alma19.gitbooks.io/show-tracker-api/content/" target="_blank">Documentation</a>
+       <a href="https://alma19.gitbooks.io/show-tracker-api/content/" target="_blank">Documentation</a> |
+       <a href="http://codepen.io/katehoover/pen/wBoQXL" target="_blank">Loader Component</a>
   </div>
+
 </template>
 
 <script>

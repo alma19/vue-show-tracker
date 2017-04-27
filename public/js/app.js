@@ -22266,11 +22266,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
   methods: {
+    // opens up ShowForm / takes away filtering options when making a new show
     createForm: function createForm() {
       this.showForm = true;
       console.log('createForm');
       this.filtering = false;
     },
+
+
+    // retrieving shows from database / displaying them on page
     fetch: function fetch() {
       var _this = this;
 
@@ -22291,6 +22295,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     // end fetch
 
+    //updating a show
     update: function update(data) {
       console.log(data);
       var i = this.shows.indexOf(data.show);
@@ -22302,10 +22307,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     // end update
 
+    //deleting a show
     remove: function remove(i) {
       console.log('App -> remove ID: ' + i);
       this.shows.splice(i, 1);
     },
+
+
+    //cancelling a show from ShowForm
     cancelling: function cancelling() {
       console.log('cancelCreate');
       this.name = '';
@@ -22315,6 +22324,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.notes = '';
       this.rating = '';
       this.picture = '';
+      this.season = '';
+      this.episode = '';
       this.favorite = false;
       this.showForm = false;
       this.filtering = true;
@@ -22484,6 +22495,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
   methods: {
+    //sending information back up to app -> telling app to open new show form
     createForm: function createForm() {
       console.log('Navigation createForm');
       this.$emit('openForm');
@@ -22501,6 +22513,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_star_rating__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_star_rating___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_star_rating__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -22614,6 +22644,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       status: this.show.status,
       rating: this.show.rating,
       picture: this.show.picture,
+      season: this.show.season,
+      episode: this.show.episode,
       favorite: this.show.favorite,
       editing: false,
       loading: false,
@@ -22654,6 +22686,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         status: this.status,
         rating: this.rating,
         picture: this.picture,
+        season: this.season,
+        episode: this.episode,
         favorite: this.favorite
       })
       // this.$emit -> updates what's displayed on page -> App.vue
@@ -22667,6 +22701,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           status: _this2.status,
           rating: _this2.rating,
           picture: _this2.picture,
+          season: _this2.season,
+          episode: _this2.episode,
           favorite: _this2.favorite
         });
         _this2.editing = false;
@@ -22687,6 +22723,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.status = this.show.status;
       this.rating = this.show.rating;
       this.picture = this.show.picture;
+      this.season = this.show.season;
+      this.episode = this.show.episode;
       this.favorite = this.show.favorite;
       this.editing = false;
     },
@@ -22703,6 +22741,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -22803,8 +22842,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 
 
@@ -22826,6 +22863,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       status: '',
       rating: 0,
       picture: '',
+      season: '',
+      episode: '',
       favorite: false,
       loading: false,
       filtering: false
@@ -22834,6 +22873,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   methods: {
 
+    // setting rating
     setRating: function setRating(rating) {
       this.rating = rating;
       console.log(rating);
@@ -22847,6 +22887,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.loading = true;
       this.sendRequest();
     },
+
+    //sending show info to database
     sendRequest: function sendRequest() {
       var _this = this;
 
@@ -22857,8 +22899,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         status: this.status,
         rating: this.rating,
         picture: this.picture,
+        season: this.season,
+        episode: this.episode,
         favorite: this.favorite
-      }).then(function (response) {
+      })
+      //sending new show info to page
+      .then(function (response) {
         console.log('ShowForm -> sendRequest success');
         console.log(response.data);
         _this.loading = false;
@@ -22876,10 +22922,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.status = '';
       this.rating = 0;
       this.picture = '';
+      this.season = '';
+      this.episode = '';
       this.favorite = false;
     },
 
-    //cancel creating a new show
+    //cancel creating a new show, resets forms to blank when you cancel
     cancelCreate: function cancelCreate() {
       this.name = '';
       this.channel = '';
@@ -22887,6 +22935,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.status = '';
       this.rating = 0;
       this.picture = '';
+      this.season = '';
+      this.episode = '';
       this.$emit('cancelled');
     }
   }
@@ -25348,7 +25398,7 @@ exports.push([module.i, "\n.star[data-v-248fe0b8] {\r\n    display: inline-block
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)();
-exports.push([module.i, "\n.Show2 {\n  height: 750px;\n}\n.Show {\n  width: 300px;\n  height: 650px;\n  margin-bottom: 5px;\n}\n.Show img {\n    width: 300px;\n    height: 450px;\n    margin-top: 2%;\n}\n.Show .show-text {\n    color: #fff;\n    background-color: #7e6e81;\n    width: 300px;\n    height: 150px;\n    text-align: center;\n    margin-top: 3%;\n    padding: 10px;\n}\n.Show .show-icons {\n    font-size: 1.5em;\n}\n.Show i {\n    color: black;\n}\n.Show .show-name {\n    color: white;\n}\n.Show .stars {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n}\n.Show .edit {\n    float: left;\n}\n.Show .delete {\n    float: right;\n}\n.Show .save {\n    background-color: #3f4664;\n    border-color: #3f4664;\n    color: #fff;\n}\n.Show .save:hover, .Show .save:active {\n    background-color: #7e7e85;\n    border-color: #7e7e85;\n    color: white;\n}\n.Show .buttons {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n}\n", ""]);
+exports.push([module.i, "\n.Show2 {\n  height: 750px;\n}\n.Show {\n  width: 300px;\n  height: 650px;\n  margin-bottom: 5px;\n}\n.Show img {\n    width: 300px;\n    height: 450px;\n    margin-top: 2%;\n}\n.Show .show-text {\n    color: #fff;\n    background-color: #7e6e81;\n    width: 300px;\n    height: 155px;\n    text-align: center;\n    margin-top: 3%;\n    padding: 10px;\n}\n.Show .show-icons {\n    font-size: 1.5em;\n}\n.Show i {\n    color: black;\n}\n.Show .show-name {\n    color: white;\n}\n.Show .stars {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n}\n.Show .edit {\n    float: left;\n}\n.Show .delete {\n    float: right;\n}\n.Show .save {\n    background-color: #3f4664;\n    border-color: #3f4664;\n    color: #fff;\n}\n.Show .save:hover, .Show .save:active {\n    background-color: #7e7e85;\n    border-color: #7e7e85;\n    color: white;\n}\n.Show .buttons {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n}\n", ""]);
 
 /***/ }),
 /* 51 */,
@@ -25356,7 +25406,7 @@ exports.push([module.i, "\n.Show2 {\n  height: 750px;\n}\n.Show {\n  width: 300p
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)();
-exports.push([module.i, "\ni[data-v-5c5aebea] {\n  font-size: 2em;\n  position: relative;\n  top: 11px;\n  float: left;\n}\na[data-v-5c5aebea] {\n  pointer: cursor;\n}\n#home[data-v-5c5aebea] {\n  margin-left: 0%;\n}\n.navbar-default[data-v-5c5aebea] {\n  background-color: #7e6e81;\n  border-color: #7e6e81;\n}\n.navbar-default .navbar-nav > li > a[data-v-5c5aebea] {\n  color: black;\n}\n.navbar-default .navbar-brand[data-v-5c5aebea] {\n  color: black;\n}\n.navbar-default .navbar-toggle[data-v-5c5aebea]:hover, .navbar-default. navbar-toggle[data-v-5c5aebea]:focus {\n  background-color: #7e6e81;\n}\n", ""]);
+exports.push([module.i, "\n.Navigation[data-v-5c5aebea] {\r\n  font-size: 1.5em;\n}\na[data-v-5c5aebea] {\r\n    pointer: cursor;\n}\n#home[data-v-5c5aebea] {\r\n    margin-left: 0%;\r\n    font-size: 1.5em;\n}\n.navbar-default[data-v-5c5aebea] {\r\n    background-color: #7e6e81;\r\n    border-color: #7e6e81;\n}\n.navbar-default .navbar-nav > li > a[data-v-5c5aebea] {\r\n    color: black;\n}\n.navbar-default .navbar-brand[data-v-5c5aebea] {\r\n    color: black;\n}\n.navbar-default .navbar-toggle[data-v-5c5aebea]:hover, .navbar-default. navbar-toggle[data-v-5c5aebea]:focus {\r\n    background-color: #7e6e81;\n}\r\n", ""]);
 
 /***/ }),
 /* 53 */
@@ -25377,7 +25427,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)();
-exports.push([module.i, "\nnav {\n  font-family: 'Raleway', sans-serif;\n}\nbody {\n  background-color: #bca68b;\n}\n.navigation a {\n  pointer: cursor;\n}\n.navigation #home {\n  margin-left: 0%;\n}\n.navigation .navbar-default {\n  background-color: #7e6e81;\n  border-color: #7e6e81;\n}\n.navigation .navbar-default .navbar-nav > li > a {\n  color: black;\n}\n.navigation .navbar-default .navbar-brand {\n  color: black;\n}\n.navigation .navbar-default .navbar-toggle:hover .navbar-default .navbar-toggle:focus {\n  background-color: #7e6e81;\n}\n.intro {\n  text-align: center;\n}\n.intro .intro-text {\n    color: white;\n}\n.intro .intro-filter ul {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-pack: distribute;\n        justify-content: space-around;\n    font-family: 'Hind', sans-serif;\n}\n.intro .intro-filter ul li {\n      list-style-type: none;\n}\n.intro .intro-filter ul li a {\n        color: #3f4664;\n        font-weight: 700;\n        text-decoration: none;\n}\n@media only screen and (max-width: 500px) {\n.intro .intro-filter ul {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n}\n}\n", ""]);
+exports.push([module.i, "\nbody {\n  background-color: #bca68b;\n}\na {\n  pointer: cursor;\n}\n.intro {\n  text-align: center;\n}\n.intro .intro-text {\n    color: white;\n}\n.intro .intro-filter ul {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-pack: distribute;\n        justify-content: space-around;\n    font-family: 'Hind', sans-serif;\n}\n.intro .intro-filter ul li {\n      list-style-type: none;\n}\n.intro .intro-filter ul li a {\n        color: #3f4664;\n        font-weight: 700;\n        text-decoration: none;\n}\n@media only screen and (max-width: 500px) {\n.intro .intro-filter ul {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n}\n}\n", ""]);
 
 /***/ }),
 /* 56 */
@@ -42860,7 +42910,10 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "Show col-lg-4 col-md-4"
+    staticClass: "Show col-lg-4 col-md-4",
+    class: {
+      Show2: _vm.editing
+    }
   }, [_c('div', {
     directives: [{
       name: "show",
@@ -42880,7 +42933,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "show-text"
   }, [_c('h4', {
     staticClass: "show-name"
-  }, [_vm._v(_vm._s(_vm.show.name))]), _vm._v("\n            " + _vm._s(_vm.show.status) + "\n            "), _c('div', {
+  }, [_vm._v(_vm._s(_vm.show.name))]), _vm._v(" "), _c('p', [_vm._v("\n               " + _vm._s(_vm.show.status) + "\n               "), (_vm.season) ? _c('span', [_vm._v("\n                  | Season: " + _vm._s(_vm.show.season) + ", Episode: " + _vm._s(_vm.show.episode) + "\n               ")]) : _vm._e()]), _vm._v(" "), _c('div', {
     staticClass: "stars"
   }, [_c('star-rating', {
     attrs: {
@@ -43064,8 +43117,52 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "value": "Watched"
     }
   }, [_vm._v("Watched")])])]), _vm._v(" "), _c('div', {
+    staticClass: "form-group col-lg-6 col-md-6"
+  }, [_vm._m(5), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.season),
+      expression: "season"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.season)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.season = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "form-group col-lg-6 col-md-6"
+  }, [_vm._m(6), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.episode),
+      expression: "episode"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.episode)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.episode = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('div', {
     staticClass: "form-group col-lg-12 col-md-12"
-  }, [_vm._m(5), _vm._v(" "), _c('star-rating', {
+  }, [_vm._m(7), _vm._v(" "), _c('star-rating', {
     attrs: {
       "star-size": 30
     },
@@ -43078,7 +43175,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })], 1), _vm._v(" "), _c('div', {
     staticClass: "form-group col-lg-12 col-md-12"
-  }, [_vm._m(6), _vm._v(" "), _c('input', {
+  }, [_vm._m(8), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -43133,6 +43230,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('label', [_c('h4', [_vm._v("Show Cover URL")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('label', [_c('h4', [_vm._v("Status")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('label', [_c('h4', [_vm._v("Season")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('label', [_c('h4', [_vm._v("Episode")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('label', [_c('h4', [_vm._v("Rating")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -43280,8 +43381,52 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "value": "Watched"
     }
   }, [_vm._v("Watched")])])]), _vm._v(" "), _c('div', {
-    staticClass: "form-group col-lg-4 col-md-4"
-  }, [_vm._m(5), _vm._v(" "), _c('star-rating', {
+    staticClass: "form-group col-lg-2 col-md-2"
+  }, [_vm._m(5), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.season),
+      expression: "season"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.season)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.season = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "form-group col-lg-2 col-md-2"
+  }, [_vm._m(6), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.episode),
+      expression: "episode"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.episode)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.episode = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "form-group col-lg-4 col-md-4 col-sm-12"
+  }, [_vm._m(7), _vm._v(" "), _c('star-rating', {
     attrs: {
       "star-size": 30
     },
@@ -43296,8 +43441,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "rating"
     }
   })], 1), _vm._v(" "), _c('div', {
-    staticClass: "form-group col-lg-4 col-md-4"
-  }, [_vm._m(6), _vm._v(" "), _c('input', {
+    staticClass: "form-group col-lg-4 col-md-4 col-sm-12"
+  }, [_vm._m(8), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -43366,6 +43511,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('label', [_c('h4', [_vm._v("Status")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('label', [_c('h4', [_vm._v("Season")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('label', [_c('h4', [_vm._v("Episode")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('label', [_c('h4', [_vm._v("Rating")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('label', [_c('h4', [_vm._v("Favorite")])])
@@ -43428,7 +43577,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   })]), _vm._v(" "), _c('a', {
     staticClass: "navbar-brand",
     attrs: {
-      "href": "",
+      "href": "#",
       "id": "home"
     }
   }, [_vm._v("Show Tracker")])])
@@ -43468,10 +43617,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("Github")]), _vm._v(" |\n     "), _c('a', {
     attrs: {
-      "href": "/"
-    }
-  }, [_vm._v("Credits")]), _vm._v(" |\n     "), _c('a', {
-    attrs: {
       "href": "/styleguide"
     }
   }, [_vm._v("Styleguide")]), _vm._v(" |\n     "), _c('a', {
@@ -43479,7 +43624,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "href": "https://alma19.gitbooks.io/show-tracker-api/content/",
       "target": "_blank"
     }
-  }, [_vm._v("Documentation")])])
+  }, [_vm._v("Documentation")]), _vm._v(" |\n     "), _c('a', {
+    attrs: {
+      "href": "http://codepen.io/katehoover/pen/wBoQXL",
+      "target": "_blank"
+    }
+  }, [_vm._v("Loader Component")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {

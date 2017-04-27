@@ -1,5 +1,5 @@
 <template>
-  <div class="Show col-lg-4 col-md-4">
+  <div :class="{Show2: editing}" class="Show col-lg-4 col-md-4">
 
 
       <div class="live" v-show="!editing">
@@ -9,7 +9,13 @@
             <img :src="show.picture" class="pic"/>
             <div class="show-text">
               <h4 class="show-name">{{ show.name }}</h4>
-              {{show.status}}
+              <p>
+                 {{show.status}}
+                 <span v-if="season">
+                    | Season: {{ show.season }}, Episode: {{ show.episode }}
+                 </span>
+
+              </p>
               <div class="stars">
                 <star-rating :read-only="true" :rating="rating" v-bind:show-rating="false" v-bind:star-size="30">{{ show.rating }}
                 </star-rating>
@@ -67,6 +73,18 @@
             </select>
           </div>
 
+
+          <div class="form-group col-lg-6 col-md-6">
+            <label><h4>Season</h4></label>
+            <input class="form-control" type="text" v-model="season"/>
+          </div>
+
+          <div class="form-group col-lg-6 col-md-6">
+            <label><h4>Episode</h4></label>
+            <input class="form-control" type="text" v-model="episode"/>
+          </div>
+
+
             <div class="form-group col-lg-12 col-md-12">
               <label><h4>Rating</h4></label>
                 <star-rating v-model="rating" v-bind:star-size="30"></star-rating>
@@ -113,6 +131,8 @@ export default {
       status: this.show.status,
       rating: this.show.rating,
       picture: this.show.picture,
+      season: this.show.season,
+      episode: this.show.episode,
       favorite: this.show.favorite,
       editing: false,
       loading: false,
@@ -149,6 +169,8 @@ export default {
         status: this.status,
         rating: this.rating,
         picture: this.picture,
+        season: this.season,
+        episode: this.episode,
         favorite: this.favorite
       })
       // this.$emit -> updates what's displayed on page -> App.vue
@@ -162,6 +184,8 @@ export default {
           status: this.status,
           rating: this.rating,
           picture: this.picture,
+          season: this.season,
+          episode: this.episode,
           favorite: this.favorite
         });
         this.editing = false;
@@ -182,6 +206,8 @@ export default {
       this.status = this.show.status;
       this.rating = this.show.rating;
       this.picture = this.show.picture;
+      this.season = this.show.season;
+      this.episode = this.show.episode;
       this.favorite = this.show.favorite;
       this.editing = false;
     },
@@ -218,7 +244,7 @@ export default {
     color: #fff;
     background-color: #7e6e81;
     width: 300px;
-    height: 150px;
+    height: 155px;
     text-align: center;
     margin-top: 3%;
     padding: 10px;

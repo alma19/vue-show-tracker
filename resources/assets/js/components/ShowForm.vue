@@ -35,20 +35,18 @@
     </select>
   </div>
 
+  <div class="form-group col-lg-2 col-md-2">
+    <label><h4>Season</h4></label>
+    <input class="form-control" type="text" v-model="season"/>
+  </div>
 
-    <!-- <div class="form-group col-lg-4 col-md-4">
-      <label><h4>Rating</h4></label>
-      <select class="form-control" v-model="rating">
-        <option value="" selected></option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-    </div> -->
+  <div class="form-group col-lg-2 col-md-2">
+    <label><h4>Episode</h4></label>
+    <input class="form-control" type="text" v-model="episode"/>
+  </div>
 
-    <div class="form-group col-lg-4 col-md-4">
+
+    <div class="form-group col-lg-4 col-md-4 col-sm-12">
       <label><h4>Rating</h4></label>
         <star-rating
           v-model="rating" v-bind:star-size="30"
@@ -57,7 +55,7 @@
     </div>
 
 
-<div class="form-group col-lg-4 col-md-4">
+<div class="form-group col-lg-4 col-md-4 col-sm-12">
   <label><h4>Favorite</h4></label>
   <input class="form-control" type="checkbox" v-model="favorite" />
 </div>
@@ -98,6 +96,8 @@ export default {
       status: '',
       rating: 0,
       picture: '',
+      season: '',
+      episode: '',
       favorite: false,
       loading: false,
       filtering: false
@@ -105,6 +105,7 @@ export default {
   },
   methods: {
 
+    // setting rating
     setRating: function(rating) {
       this.rating = rating;
       console.log(rating);
@@ -118,6 +119,7 @@ export default {
       this.loading = true;
       this.sendRequest();
     },
+    //sending show info to database
     sendRequest () {
       axios.post('/shows', {
         name: this.name,
@@ -126,8 +128,11 @@ export default {
         status: this.status,
         rating: this.rating,
         picture: this.picture,
+        season: this.season,
+        episode: this.episode,
         favorite: this.favorite
       })
+      //sending new show info to page
       .then((response) => {
         console.log('ShowForm -> sendRequest success');
         console.log(response.data);
@@ -148,9 +153,11 @@ export default {
       this.status = '';
       this.rating = 0;
       this.picture = '';
+      this.season = '';
+      this.episode = '';
       this.favorite = false;
     },
-    //cancel creating a new show
+    //cancel creating a new show, resets forms to blank when you cancel
     cancelCreate (){
       this.name = '';
       this.channel = '';
@@ -158,6 +165,8 @@ export default {
       this.status = '';
       this.rating = 0;
       this.picture = '';
+      this.season = '';
+      this.episode = '';
       this.$emit('cancelled')
     }
   }

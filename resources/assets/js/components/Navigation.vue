@@ -11,7 +11,7 @@
              <span class="icon-bar"></span>
              <span class="icon-bar"></span>
            </button>
-           <a class="navbar-brand" href="" id="home">Show Tracker</a>
+           <a class="navbar-brand" href="#" id="home">Show Tracker</a>
          </div>
 
          <!-- Collect the nav links, forms, and other content for toggling -->
@@ -52,6 +52,7 @@ export default {
   },
 
   methods: {
+    //sending information back up to app -> telling app to open new show form
     createForm() {
       console.log('Navigation createForm');
       this.$emit('openForm');
@@ -62,12 +63,9 @@ export default {
 
 <style scoped>
 
-  i {
-    font-size: 2em;
-    position: relative;
-    top: 11px;
-    float: left;
-  }
+.Navigation {
+  font-size: 1.5em;
+}
 
   a {
     pointer: cursor;
@@ -75,6 +73,7 @@ export default {
 
   #home {
     margin-left: 0%;
+    font-size: 1.5em;
   }
 
   .navbar-default {
