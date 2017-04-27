@@ -79,10 +79,10 @@
 
 
 
-        <p>
-          <button class="btn btn-default save" @click="save">Save</button>
+        <div class="buttons col-lg-12 col-md-12 col-sm-12">
           <button class="btn btn-default" @click="cancel">Cancel</button>
-        </p>
+          <button class="btn btn-default save" @click="save">Save</button>
+        </div>
 
 
 
@@ -259,6 +259,11 @@ export default {
     background-color: #7e7e85;
     border-color: #7e7e85;
     color: white;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
   }
 }
 

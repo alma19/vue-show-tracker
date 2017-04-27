@@ -9,7 +9,7 @@
       <h3 class="intro-text">
         Welcome to the Show Tracker!
       </h3>
-      <div class="intro-filter">
+      <div class="intro-filter" v-show="filtering">
         <ul>
           <li><a href="#" @click.prevent="showAll"><h4>All Shows</h4></a> </li>
           <li><a href="#" @click.prevent="showToWatch"><h4>To Watch</h4></a> </li>
@@ -105,18 +105,21 @@ export default {
       toWatch: false,
       watching: false,
       watched: false,
-      favoriteShow: false
+      favoriteShow: false,
+      filtering: true
     }
   },
 
   mounted () {
     this.fetch();
+    console.log(this.filtering);
   },
 
   methods: {
     createForm() {
       this.showForm = true;
       console.log('createForm');
+      this.filtering = false;
     },
 
     fetch (){
@@ -129,6 +132,7 @@ export default {
           console.log(response.data);
           this.shows = response.data;
           this.loading = false;
+          this.filtering = true; 
         })
         .catch((response) => {
           console.log('App -> fetch error');
@@ -163,6 +167,7 @@ export default {
        this.picture = '';
        this.favorite = false;
        this.showForm = false;
+       this.filtering = true;
      },
 
      //filtering shows by status

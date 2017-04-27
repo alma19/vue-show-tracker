@@ -65,8 +65,8 @@
 
 
   <div class="buttons col-lg-12 col-md-12 col-sm-12">
-    <button class="btn btn-sm add" @click="create" :disabled="loading">Add Show</button>
     <button class="btn btn-default cancel" @click.prevent="cancelCreate">Cancel</button>
+    <button class="btn btn-sm add" @click="create" :disabled="loading">Add Show</button>
     <Loader v-show="loading"></Loader>
   </div>
 
@@ -99,7 +99,8 @@ export default {
       rating: 0,
       picture: '',
       favorite: false,
-      loading: false
+      loading: false,
+      filtering: false
     }
   },
   methods: {
@@ -164,11 +165,13 @@ export default {
 
 </script>
 
-<style lang="scss">
+<style scoped>
 
 .buttons {
   display: flex;
+  justify-content: space-between;
 }
+
 
 
 

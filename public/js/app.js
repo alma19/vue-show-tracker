@@ -1039,7 +1039,7 @@ module.exports = defaults;
 
 
 /* styles */
-__webpack_require__(76)
+__webpack_require__(93)
 
 var Component = __webpack_require__(1)(
   /* script */
@@ -1047,7 +1047,7 @@ var Component = __webpack_require__(1)(
   /* template */
   __webpack_require__(67),
   /* scopeId */
-  null,
+  "data-v-4d501ad0",
   /* cssModules */
   null
 )
@@ -22255,11 +22255,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       toWatch: false,
       watching: false,
       watched: false,
-      favoriteShow: false
+      favoriteShow: false,
+      filtering: true
     };
   },
   mounted: function mounted() {
     this.fetch();
+    console.log(this.filtering);
   },
 
 
@@ -22267,6 +22269,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     createForm: function createForm() {
       this.showForm = true;
       console.log('createForm');
+      this.filtering = false;
     },
     fetch: function fetch() {
       var _this = this;
@@ -22279,6 +22282,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         console.log(response.data);
         _this.shows = response.data;
         _this.loading = false;
+        _this.filtering = true;
       }).catch(function (response) {
         console.log('App -> fetch error');
         //show error
@@ -22313,6 +22317,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.picture = '';
       this.favorite = false;
       this.showForm = false;
+      this.filtering = true;
     },
 
 
@@ -22822,7 +22827,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       rating: 0,
       picture: '',
       favorite: false,
-      loading: false
+      loading: false,
+      filtering: false
     };
   },
 
@@ -25342,16 +25348,10 @@ exports.push([module.i, "\n.star[data-v-248fe0b8] {\r\n    display: inline-block
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)();
-exports.push([module.i, "\n.Show2 {\n  height: 750px;\n}\n.Show {\n  width: 300px;\n  height: 650px;\n  margin-bottom: 5px;\n}\n.Show img {\n    width: 300px;\n    height: 450px;\n    margin-top: 2%;\n}\n.Show .show-text {\n    color: #fff;\n    background-color: #7e6e81;\n    width: 300px;\n    height: 150px;\n    text-align: center;\n    margin-top: 3%;\n    padding: 10px;\n}\n.Show .show-icons {\n    font-size: 1.5em;\n}\n.Show i {\n    color: black;\n}\n.Show .show-name {\n    color: white;\n}\n.Show .stars {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n}\n.Show .edit {\n    float: left;\n}\n.Show .delete {\n    float: right;\n}\n.Show .save {\n    background-color: #3f4664;\n    border-color: #3f4664;\n    color: #fff;\n}\n.Show .save:hover, .Show .save:active {\n    background-color: #7e7e85;\n    border-color: #7e7e85;\n    color: white;\n}\n", ""]);
+exports.push([module.i, "\n.Show2 {\n  height: 750px;\n}\n.Show {\n  width: 300px;\n  height: 650px;\n  margin-bottom: 5px;\n}\n.Show img {\n    width: 300px;\n    height: 450px;\n    margin-top: 2%;\n}\n.Show .show-text {\n    color: #fff;\n    background-color: #7e6e81;\n    width: 300px;\n    height: 150px;\n    text-align: center;\n    margin-top: 3%;\n    padding: 10px;\n}\n.Show .show-icons {\n    font-size: 1.5em;\n}\n.Show i {\n    color: black;\n}\n.Show .show-name {\n    color: white;\n}\n.Show .stars {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n}\n.Show .edit {\n    float: left;\n}\n.Show .delete {\n    float: right;\n}\n.Show .save {\n    background-color: #3f4664;\n    border-color: #3f4664;\n    color: #fff;\n}\n.Show .save:hover, .Show .save:active {\n    background-color: #7e7e85;\n    border-color: #7e7e85;\n    color: white;\n}\n.Show .buttons {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n}\n", ""]);
 
 /***/ }),
-/* 51 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)();
-exports.push([module.i, "\n.buttons {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n", ""]);
-
-/***/ }),
+/* 51 */,
 /* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -43110,17 +43110,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }
-  })]), _vm._v(" "), _c('p', [_c('button', {
-    staticClass: "btn btn-default save",
-    on: {
-      "click": _vm.save
-    }
-  }, [_vm._v("Save")]), _vm._v(" "), _c('button', {
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "buttons col-lg-12 col-md-12 col-sm-12"
+  }, [_c('button', {
     staticClass: "btn btn-default",
     on: {
       "click": _vm.cancel
     }
-  }, [_vm._v("Cancel")])])])])
+  }, [_vm._v("Cancel")]), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-default save",
+    on: {
+      "click": _vm.save
+    }
+  }, [_vm._v("Save")])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('label', [_c('h4', [_vm._v("Name")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -43330,14 +43332,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   })]), _vm._v(" "), _c('div', {
     staticClass: "buttons col-lg-12 col-md-12 col-sm-12"
   }, [_c('button', {
-    staticClass: "btn btn-sm add",
-    attrs: {
-      "disabled": _vm.loading
-    },
-    on: {
-      "click": _vm.create
-    }
-  }, [_vm._v("Add Show")]), _vm._v(" "), _c('button', {
     staticClass: "btn btn-default cancel",
     on: {
       "click": function($event) {
@@ -43345,7 +43339,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.cancelCreate($event)
       }
     }
-  }, [_vm._v("Cancel")]), _vm._v(" "), _c('Loader', {
+  }, [_vm._v("Cancel")]), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-sm add",
+    attrs: {
+      "disabled": _vm.loading
+    },
+    on: {
+      "click": _vm.create
+    }
+  }, [_vm._v("Add Show")]), _vm._v(" "), _c('Loader', {
     directives: [{
       name: "show",
       rawName: "v-show",
@@ -43558,6 +43560,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('h3', {
     staticClass: "intro-text"
   }, [_vm._v("\n      Welcome to the Show Tracker!\n    ")]), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.filtering),
+      expression: "filtering"
+    }],
     staticClass: "intro-filter"
   }, [_c('ul', [_c('li', [_c('a', {
     attrs: {
@@ -46221,32 +46229,7 @@ if(false) {
 }
 
 /***/ }),
-/* 76 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(51);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(3)("571b395c", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-4d501ad0!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShowForm.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-4d501ad0!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShowForm.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
+/* 76 */,
 /* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -47034,6 +47017,46 @@ module.exports = function(module) {
 __webpack_require__(18);
 module.exports = __webpack_require__(19);
 
+
+/***/ }),
+/* 85 */,
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)();
+exports.push([module.i, "\n.buttons[data-v-4d501ad0] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: justify;\r\n      -ms-flex-pack: justify;\r\n          justify-content: space-between;\n}\r\n\r\n\r\n\r\n\r\n", ""]);
+
+/***/ }),
+/* 93 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(92);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("6af745b8", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-4d501ad0&scoped=true!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShowForm.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-4d501ad0&scoped=true!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShowForm.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
 
 /***/ })
 /******/ ]);
