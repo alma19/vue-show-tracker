@@ -1,7 +1,7 @@
 <template>
   <div class="ShowForm">
 
-  <h1>New Show</h1>
+  <h1 class="col-lg-12">Add New Show</h1>
 
   <div class="form-group col-lg-4 col-md-4">
     <label><h4>Name</h4></label>
@@ -44,6 +44,7 @@
     <label><h4>Episode</h4></label>
     <input class="form-control" type="text" v-model="episode"/>
   </div>
+
 
 
     <div class="form-group col-lg-4 col-md-4 col-sm-12">
@@ -110,6 +111,8 @@ export default {
       this.rating = rating;
       console.log(rating);
     },
+
+    // create new show
     create (){
       console.log('ShowForm -> create');
       if(this.loading) {
@@ -142,11 +145,12 @@ export default {
       })
       .catch((error) => {
         console.log('ShowForm -> sendRequest error');
-        alert("Error. Show has not been created"); 
+        alert("Error. Show has not been created");
         // show an error message
       });
     },
 
+    // resets form to blank after you create a new show
     reset (){
       this.name = '';
       this.channel = '';
@@ -180,6 +184,10 @@ export default {
 .buttons {
   display: flex;
   justify-content: space-between;
+}
+
+input[type="checkbox"] {
+  height: 30px;
 }
 
 

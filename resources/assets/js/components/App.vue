@@ -1,16 +1,16 @@
 <template>
   <div>
+    <!-- binding to navigation component so you can create a new show  -->
     <Navigation @openForm="createForm"></Navigation>
 
 
     <div class="container">
 
     <div class="intro">
-      <h3 class="intro-title">
-        Welcome to the Show Tracker!
-      </h3>
       <div class="intro-text">
+      <p>
         Show Tracker was created as a way to help you keep track of TV shows you want to watch, are currently watching, or have already watched. Click on 'New Show' to get started!
+      </p>
       </div>
 
       <!--v show toggles on / off when you make a new show -->
@@ -70,7 +70,10 @@
       <!-- @updated & @deleted is from Show.vue, what was emitted for the remove() and save() methods -->
 
 
+
+    <!--if no shows have been created, display this message. -->
     <p v-show="shows.length === 0">You do not have any shows yet. Why don't you add one?</p>
+
 
     <transition name="fade">
       <MainLoader v-if="loading"></MainLoader>
@@ -116,9 +119,9 @@ export default {
     }
   },
 
+  // fetches data from database when the page loads
   mounted () {
     this.fetch();
-    console.log(this.filtering);
   },
 
   methods: {
@@ -257,6 +260,9 @@ body {
           color: #3f4664;
           font-weight: 700;
           text-decoration: none;
+          :hover {
+            color: white;
+          }
         }
       }
     }

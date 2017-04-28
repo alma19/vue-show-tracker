@@ -13,6 +13,7 @@ class CreateShowsTable extends Migration
      */
     public function up()
     {
+      //creates show table
       Schema::create('shows', function(Blueprint $table) {
           $table->increments('id');
           $table->string('name')->default('')->nullable();
@@ -35,6 +36,7 @@ class CreateShowsTable extends Migration
      */
     public function down()
     {
+        //removes show table 
         Schema::dropIfExists('shows');
     }
 }

@@ -11,12 +11,13 @@ Show Tracker was built using Laravel and Vue.js. It implements REST principles, 
 1. Clone this repository.
 2. Download the MAMP application: https://www.mamp.info/en/downloads/
 3. Download composer: https://getcomposer.org/download/
-4. Open the MAMP application. Go to 'Preferences'> 'Web Server', and the select the 'public' folder of the repository.
-5. In 'Ports' make sure the Apache Port is set to '8888'. Nginx Port should be set to '8888'. MySQL Port should be set to '8889'
-6. Create a database named 'app'
-7. Open up your terminal, cd into the project directory, and then run 'php artisan:migrate' to create database migrations for this application.
-8. While in your project directory, run 'npm run watch' or 'npm run hot' to load up the project.
-9. In your preferred browser, open up 'localhost:8888.'
+4. Open up your terminal, cd into the project directory, and run 'npm install' to install the node dependencies.
+5. Open the MAMP application. Go to 'Preferences'> 'Web Server', and the select the 'public' folder of the repository.
+6. In 'Ports' make sure the Apache Port is set to '8888'. Nginx Port should be set to '8888'. MySQL Port should be set to '8889'
+7. Create a database named 'app'
+8. Run 'php artisan:migrate' in your terminal to create database migrations for this application.
+9. While in your project directory, run 'npm run watch' or 'npm run hot' to load up the project.
+10. In your preferred browser, open up 'localhost:8888.'
 
 ## API Documentation
 https://alma19.gitbooks.io/show-tracker-api/content/

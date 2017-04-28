@@ -41,9 +41,10 @@
       </div> <!-- show -->
 
 
+      <!--shows if editing -->
       <div v-show="editing">
 
-        <h3>Edit Show</h3>
+        <h3 class="col-lg-12">Edit Show</h3>
         <div class="form-group col-lg-12 col-md-12">
             <label><h4>Name</h4></label>
             <input class="form-control" type="text" v-model="name" />
@@ -92,8 +93,9 @@
             </div>
 
           <div class="form-group col-lg-12 col-md-12">
-            <label><h4>Favorite</h4></label>
+            <label><h4>Favorite</h4>
             <input class="form-control" type="checkbox" v-model="favorite" />
+            </label>
           </div>
 
 
@@ -194,7 +196,7 @@ export default {
       })
       .catch((error) => {
         console.log('Show -> save error');
-        alert("Error. Show not updated."); 
+        alert("Error. Show not updated.");
         //show the user that it couldn't be updated
       });
     }, // end save
@@ -241,7 +243,7 @@ export default {
     width: 300px;
     height: 155px;
     text-align: center;
-    margin-top: 3%;
+    margin-top: 1%;
     padding: 10px;
   }
 
@@ -285,6 +287,9 @@ export default {
   .buttons {
     display: flex;
     justify-content: space-between;
+  }
+  input[type="checkbox"] {
+    height: 30px;
   }
 }
 

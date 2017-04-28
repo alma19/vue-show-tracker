@@ -22234,6 +22234,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
@@ -22265,9 +22268,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       filtering: true
     };
   },
+
+
+  // fetches data from database when the page loads
   mounted: function mounted() {
     this.fetch();
-    console.log(this.filtering);
   },
 
 
@@ -22633,6 +22638,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -22849,6 +22856,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -22885,6 +22893,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.rating = rating;
       console.log(rating);
     },
+
+    // create new show
     create: function create() {
       console.log('ShowForm -> create');
       if (this.loading) {
@@ -22923,6 +22933,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         // show an error message
       });
     },
+
+
+    // resets form to blank after you create a new show
     reset: function reset() {
       this.name = '';
       this.channel = '';
@@ -25406,14 +25419,14 @@ exports.push([module.i, "\n.star[data-v-248fe0b8] {\r\n    display: inline-block
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)();
-exports.push([module.i, "\n.Show {\n  width: 300px;\n  height: 650px;\n  margin-bottom: 5px;\n}\n.Show img {\n    width: 300px;\n    height: 450px;\n    margin-top: 2%;\n}\n.Show .show-text {\n    color: #fff;\n    background-color: #7e6e81;\n    width: 300px;\n    height: 155px;\n    text-align: center;\n    margin-top: 3%;\n    padding: 10px;\n}\n.Show .show-icons {\n    font-size: 1.5em;\n}\n.Show i {\n    color: black;\n}\n.Show .show-name {\n    color: white;\n}\n.Show .stars {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n}\n.Show .edit {\n    float: left;\n}\n.Show .delete {\n    float: right;\n}\n.Show .save {\n    background-color: #3f4664;\n    border-color: #3f4664;\n    color: #fff;\n}\n.Show .save:hover, .Show .save:active {\n    background-color: #7e7e85;\n    border-color: #7e7e85;\n    color: white;\n}\n.Show .buttons {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n}\n.Show2 {\n  height: 850px;\n}\n", ""]);
+exports.push([module.i, "\n.Show {\n  width: 300px;\n  height: 650px;\n  margin-bottom: 5px;\n}\n.Show img {\n    width: 300px;\n    height: 450px;\n    margin-top: 2%;\n}\n.Show .show-text {\n    color: #fff;\n    background-color: #7e6e81;\n    width: 300px;\n    height: 155px;\n    text-align: center;\n    margin-top: 1%;\n    padding: 10px;\n}\n.Show .show-icons {\n    font-size: 1.5em;\n}\n.Show i {\n    color: black;\n}\n.Show .show-name {\n    color: white;\n}\n.Show .stars {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n}\n.Show .edit {\n    float: left;\n}\n.Show .delete {\n    float: right;\n}\n.Show .save {\n    background-color: #3f4664;\n    border-color: #3f4664;\n    color: #fff;\n}\n.Show .save:hover, .Show .save:active {\n    background-color: #7e7e85;\n    border-color: #7e7e85;\n    color: white;\n}\n.Show .buttons {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n}\n.Show input[type=\"checkbox\"] {\n    height: 30px;\n}\n.Show2 {\n  height: 850px;\n}\n", ""]);
 
 /***/ }),
 /* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)();
-exports.push([module.i, "\n.buttons[data-v-4d501ad0] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: justify;\r\n      -ms-flex-pack: justify;\r\n          justify-content: space-between;\n}\r\n\r\n\r\n\r\n\r\n", ""]);
+exports.push([module.i, "\n.buttons[data-v-4d501ad0] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: justify;\r\n      -ms-flex-pack: justify;\r\n          justify-content: space-between;\n}\ninput[type=\"checkbox\"][data-v-4d501ad0] {\r\n  height: 30px;\n}\r\n\r\n\r\n\r\n\r\n", ""]);
 
 /***/ }),
 /* 52 */
@@ -25441,7 +25454,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)();
-exports.push([module.i, "\nbody {\n  background-color: #bca68b;\n}\na {\n  pointer: cursor;\n}\n.intro {\n  text-align: center;\n}\n.intro .intro-title {\n    color: white;\n}\n.intro .intro-text {\n    margin: 15px 0 20px 0;\n}\n.intro .intro-filter ul {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-pack: distribute;\n        justify-content: space-around;\n    font-family: 'Hind', sans-serif;\n}\n.intro .intro-filter ul li {\n      list-style-type: none;\n}\n.intro .intro-filter ul li a {\n        color: #3f4664;\n        font-weight: 700;\n        text-decoration: none;\n}\n@media only screen and (max-width: 500px) {\n.intro .intro-filter ul {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n}\n}\n", ""]);
+exports.push([module.i, "\nbody {\n  background-color: #bca68b;\n}\na {\n  pointer: cursor;\n}\n.intro {\n  text-align: center;\n}\n.intro .intro-title {\n    color: white;\n}\n.intro .intro-text {\n    margin: 15px 0 20px 0;\n}\n.intro .intro-filter ul {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-pack: distribute;\n        justify-content: space-around;\n    font-family: 'Hind', sans-serif;\n}\n.intro .intro-filter ul li {\n      list-style-type: none;\n}\n.intro .intro-filter ul li a {\n        color: #3f4664;\n        font-weight: 700;\n        text-decoration: none;\n}\n.intro .intro-filter ul li a :hover {\n          color: white;\n}\n@media only screen and (max-width: 500px) {\n.intro .intro-filter ul {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n}\n}\n", ""]);
 
 /***/ }),
 /* 56 */
@@ -43003,7 +43016,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       value: (_vm.editing),
       expression: "editing"
     }]
-  }, [_c('h3', [_vm._v("Edit Show")]), _vm._v(" "), _c('div', {
+  }, [_c('h3', {
+    staticClass: "col-lg-12"
+  }, [_vm._v("Edit Show")]), _vm._v(" "), _c('div', {
     staticClass: "form-group col-lg-12 col-md-12"
   }, [_vm._m(0), _vm._v(" "), _c('input', {
     directives: [{
@@ -43188,7 +43203,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })], 1), _vm._v(" "), _c('div', {
     staticClass: "form-group col-lg-12 col-md-12"
-  }, [_vm._m(8), _vm._v(" "), _c('input', {
+  }, [_c('label', [_c('h4', [_vm._v("Favorite")]), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -43220,7 +43235,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }
-  })]), _vm._v(" "), _c('div', {
+  })])]), _vm._v(" "), _c('div', {
     staticClass: "buttons col-lg-12 col-md-12 col-sm-12"
   }, [_c('button', {
     staticClass: "btn btn-default",
@@ -43249,8 +43264,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('label', [_c('h4', [_vm._v("Episode")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('label', [_c('h4', [_vm._v("Rating")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('label', [_c('h4', [_vm._v("Favorite")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -43267,7 +43280,9 @@ if (false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "ShowForm"
-  }, [_c('h1', [_vm._v("New Show")]), _vm._v(" "), _c('div', {
+  }, [_c('h1', {
+    staticClass: "col-lg-12"
+  }, [_vm._v("Add New Show")]), _vm._v(" "), _c('div', {
     staticClass: "form-group col-lg-4 col-md-4"
   }, [_vm._m(0), _vm._v(" "), _c('input', {
     directives: [{
@@ -43630,7 +43645,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("Github")]), _vm._v(" |\n     "), _c('a', {
     attrs: {
-      "href": "/styleguide"
+      "href": "/styleguide",
+      "target": "_blank"
     }
   }, [_vm._v("Styleguide")]), _vm._v(" |\n     "), _c('a', {
     attrs: {
@@ -43720,11 +43736,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "container"
   }, [_c('div', {
     staticClass: "intro"
-  }, [_c('h3', {
-    staticClass: "intro-title"
-  }, [_vm._v("\n      Welcome to the Show Tracker!\n    ")]), _vm._v(" "), _c('div', {
-    staticClass: "intro-text"
-  }, [_vm._v("\n      Show Tracker was created as a way to help you keep track of TV shows you want to watch, are currently watching, or have already watched. Click on 'New Show' to get started!\n    ")]), _vm._v(" "), _c('div', {
+  }, [_vm._m(0), _vm._v(" "), _c('div', {
     directives: [{
       name: "show",
       rawName: "v-show",
@@ -43938,7 +43950,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "name": "fade"
     }
   }, [(_vm.loading) ? _c('MainLoader') : _vm._e()], 1)], 1), _vm._v(" "), _c('ShowFooter')], 1)
-},staticRenderFns: []}
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "intro-text"
+  }, [_c('p', [_vm._v("\n      Show Tracker was created as a way to help you keep track of TV shows you want to watch, are currently watching, or have already watched. Click on 'New Show' to get started!\n    ")])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()

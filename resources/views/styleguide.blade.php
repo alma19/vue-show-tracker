@@ -26,7 +26,7 @@
                <span class="icon-bar"></span>
              </button>
 
-             <a class="navbar-brand" href="" id="home"> TV Show Tracker</a>
+             <a class="navbar-brand" href="/" id="home"> TV Show Tracker</a>
            </div>
 
            <!-- Collect the nav links, forms, and other content for toggling -->
