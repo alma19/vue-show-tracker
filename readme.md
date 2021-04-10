@@ -6,6 +6,8 @@ Show Tracker was built using Laravel and Vue.js. It implements REST principles, 
 
 [My portfolio.](http://almawashington.com)
 
+![vue show tracker](https://github.com/alma19/vue-show-tracker/blob/master/vueshowtracker.png?raw=true)
+
 ## Installation
 
 1. Clone this repository.
